@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import FirebaseFirestoreSwift
+import Combine
 
 final class LoginViewModel: ObservableObject {
     
@@ -14,87 +14,58 @@ final class LoginViewModel: ObservableObject {
     @Published var userName: String = ""
     @Published var password: String = ""
     @Published var email: String = ""
+    @Published var isLoading: Bool = false
+    @Published var showAlert: Bool = false
+    @Published var error: Error?
+    private var cancellable =  Set<AnyCancellable>()
     
+    let userDataService: UserDataService
     
-    let userDataService = UserDataService()
-    
-    init(){
+    init(userDataService: UserDataService =  UserDataService()){
+        self.userDataService = userDataService
         checkLoginStatus()
+        startSubscriptions()
     }
+    
+    
+    private func startSubscriptions(){
+        userDataService.$showLoader
+            .combineLatest(userDataService.$error)
+            .dropFirst()
+            .sink(receiveValue: { (isLoading, error) in
+                if let err = error{
+                    self.error = err
+                    self.showAlert = true
+                }
+                self.isLoading = isLoading
+            })
+            .store(in: &cancellable)
+    }
+    
     
     private func checkLoginStatus(){
         isloggedUser = FirebaseManager.shared.auth.currentUser?.uid != nil
     }
     
     public func logIn(){
-        
-    }
-}
-
-
-
-protocol UserDataServiceProtocol{
-    
-    func createAccount(email: String, password: String, username: String, completion: @escaping () -> Void)
-    func storeUserInformation(email: String, userName: String, completion: @escaping () -> Void)
-    func login(email: String, password: String, completion: @escaping () -> Void)
-    
-}
-
-
-final class UserDataService: UserDataServiceProtocol {
-    
-    @Published var showLoader: Bool = false
-    @Published var error: Error?
-    
-    
-    func login(email: String, password: String, completion: @escaping () -> Void){
-        showLoader = true
-        FirebaseManager.shared.auth.signIn(withEmail: email, password: password) {[weak self] (result, error) in
-            guard let self = self else {return}
-            self.showLoader = false
-            if let err = error{
-                self.error = err
-                self.showLoader = false
-                return
-            }
-            print("Successfull login, \(result?.user.uid ?? "nil")")
-            completion()
+        userDataService.logIn(email: email, password: password) { [weak self] in
+            self?.checkLoginStatus()
         }
     }
-    
-    func createAccount(email: String, password: String, username: String, completion: @escaping () -> Void){
-        showLoader = true
-        FirebaseManager.shared.auth.createUser(withEmail: email, password: password) {[weak self] (result, error) in
-            guard let self = self else {return}
-            self.showLoader = false
-            if let err = error{
-                self.error = err
-                return
-            }
-            self.storeUserInformation(email: email, userName: username, completion: completion)
+    public func createAccount(){
+        userDataService.createAccount(email: email, password: password, username: userName) { [weak self] in
+            self?.checkLoginStatus()
         }
     }
-    
-    internal func storeUserInformation(email: String, userName: String, completion: @escaping () -> Void){
-        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {return}
-        let user = User(uid: uid, email: email, userName: userName)
-        do {
-            try  FirebaseManager.shared.firestore.collection("users")
-                .document(uid)
-                .setData(from: user, completion: { error in
-                    if let error = error{
-                        self.error = error
-                        //self.handleError(error, title: "Filed to set user data")
-                        return
-                    }
-                    completion()
-                })
-        } catch {
-            self.error = error
-            //handleError(error, title: "Filed to set user data")
+    public func logOut(){
+        userDataService.logOut { [weak self] in
+            self?.checkLoginStatus()
         }
     }
 }
+
+
+
+
 
 

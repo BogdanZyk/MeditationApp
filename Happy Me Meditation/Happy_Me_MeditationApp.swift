@@ -11,7 +11,7 @@ import SwiftUI
 struct Happy_Me_MeditationApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartView()
         }
     }
 }

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A1E873828849DBE009CB2FC /* Happy_Me_MeditationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E873728849DBE009CB2FC /* Happy_Me_MeditationApp.swift */; };
-		5A1E873A28849DBE009CB2FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E873928849DBE009CB2FC /* ContentView.swift */; };
+		5A1E873A28849DBE009CB2FC /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E873928849DBE009CB2FC /* StartView.swift */; };
 		5A1E873C28849DBF009CB2FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A1E873B28849DBF009CB2FC /* Assets.xcassets */; };
 		5A1E873F28849DBF009CB2FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A1E873E28849DBF009CB2FC /* Preview Assets.xcassets */; };
 		5A1E874728849FE9009CB2FC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5A1E874628849FE9009CB2FC /* FirebaseAuth */; };
@@ -25,12 +25,23 @@
 		5A1E87682884A408009CB2FC /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5A1E87672884A408009CB2FC /* SDWebImageSwiftUI */; };
 		5A1E876A2884A45B009CB2FC /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E87692884A45A009CB2FC /* Image.swift */; };
 		5A1E876C2884A4DC009CB2FC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E876B2884A4DC009CB2FC /* LoginViewModel.swift */; };
+		5A1E876F2884C37C009CB2FC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E876E2884C37C009CB2FC /* LoginView.swift */; };
+		5A1E87712884C831009CB2FC /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E87702884C831009CB2FC /* UserDataService.swift */; };
+		5A1E87752884CB24009CB2FC /* Urbanist-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A1E87722884CB24009CB2FC /* Urbanist-Medium.ttf */; };
+		5A1E87762884CB24009CB2FC /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E87732884CB24009CB2FC /* Fonts.swift */; };
+		5A1E87772884CB24009CB2FC /* Urbanist-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A1E87742884CB24009CB2FC /* Urbanist-Regular.ttf */; };
+		5A1E877C2884CD58009CB2FC /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E877B2884CD58009CB2FC /* OnboardingView.swift */; };
+		5A1E877E2884CDE6009CB2FC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E877D2884CDE6009CB2FC /* Color.swift */; };
+		5A1E87812884CF77009CB2FC /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E87802884CF77009CB2FC /* CustomButton.swift */; };
+		5A1E87832884D685009CB2FC /* OnboardConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E87822884D685009CB2FC /* OnboardConstants.swift */; };
+		5A1E87852884E051009CB2FC /* RootOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E87842884E051009CB2FC /* RootOnboardingView.swift */; };
+		5A1E87882884E260009CB2FC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E87872884E260009CB2FC /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5A1E873428849DBE009CB2FC /* Happy Me Meditation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Happy Me Meditation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A1E873728849DBE009CB2FC /* Happy_Me_MeditationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Happy_Me_MeditationApp.swift; sourceTree = "<group>"; };
-		5A1E873928849DBE009CB2FC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5A1E873928849DBE009CB2FC /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		5A1E873B28849DBF009CB2FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A1E873E28849DBF009CB2FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5A1E874E2884A076009CB2FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -42,6 +53,19 @@
 		5A1E87642884A3D8009CB2FC /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
 		5A1E87692884A45A009CB2FC /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		5A1E876B2884A4DC009CB2FC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		5A1E876E2884C37C009CB2FC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		5A1E87702884C831009CB2FC /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
+		5A1E87722884CB24009CB2FC /* Urbanist-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Medium.ttf"; sourceTree = "<group>"; };
+		5A1E87732884CB24009CB2FC /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		5A1E87742884CB24009CB2FC /* Urbanist-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Regular.ttf"; sourceTree = "<group>"; };
+		5A1E87782884CB8C009CB2FC /* FjallaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FjallaOne-Regular.ttf"; sourceTree = "<group>"; };
+		5A1E87792884CBD4009CB2FC /* Happy-Me-Meditation-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Happy-Me-Meditation-Info.plist"; sourceTree = SOURCE_ROOT; };
+		5A1E877B2884CD58009CB2FC /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		5A1E877D2884CDE6009CB2FC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		5A1E87802884CF77009CB2FC /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		5A1E87822884D685009CB2FC /* OnboardConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardConstants.swift; sourceTree = "<group>"; };
+		5A1E87842884E051009CB2FC /* RootOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootOnboardingView.swift; sourceTree = "<group>"; };
+		5A1E87872884E260009CB2FC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +103,7 @@
 		5A1E873628849DBE009CB2FC /* Happy Me Meditation */ = {
 			isa = PBXGroup;
 			children = (
+				5A1E87792884CBD4009CB2FC /* Happy-Me-Meditation-Info.plist */,
 				5A1E873728849DBE009CB2FC /* Happy_Me_MeditationApp.swift */,
 				5A1E874E2884A076009CB2FC /* GoogleService-Info.plist */,
 				5A1E873B28849DBF009CB2FC /* Assets.xcassets */,
@@ -112,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				5A1E87562884A125009CB2FC /* FirebaseService.swift */,
+				5A1E87702884C831009CB2FC /* UserDataService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -130,7 +156,10 @@
 			isa = PBXGroup;
 			children = (
 				5A1E875B2884A163009CB2FC /* ViewComponents */,
-				5A1E873928849DBE009CB2FC /* ContentView.swift */,
+				5A1E87862884E24C009CB2FC /* MainView */,
+				5A1E877A2884CD3F009CB2FC /* OnboardView */,
+				5A1E876D2884C363009CB2FC /* Login */,
+				5A1E873928849DBE009CB2FC /* StartView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -154,6 +183,7 @@
 		5A1E87582884A147009CB2FC /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				5A1E87822884D685009CB2FC /* OnboardConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -161,6 +191,10 @@
 		5A1E87592884A14C009CB2FC /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				5A1E87732884CB24009CB2FC /* Fonts.swift */,
+				5A1E87722884CB24009CB2FC /* Urbanist-Medium.ttf */,
+				5A1E87742884CB24009CB2FC /* Urbanist-Regular.ttf */,
+				5A1E87782884CB8C009CB2FC /* FjallaOne-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -170,6 +204,7 @@
 			children = (
 				5A1E875C2884A29D009CB2FC /* View.swift */,
 				5A1E87692884A45A009CB2FC /* Image.swift */,
+				5A1E877D2884CDE6009CB2FC /* Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -177,11 +212,45 @@
 		5A1E875B2884A163009CB2FC /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				5A1E877F2884CF66009CB2FC /* Buttons */,
 				5A1E87602884A36C009CB2FC /* ProgressLoader.swift */,
 				5A1E87622884A395009CB2FC /* UserAvatarViewComponent.swift */,
 				5A1E87642884A3D8009CB2FC /* WebImageView.swift */,
 			);
 			path = ViewComponents;
+			sourceTree = "<group>";
+		};
+		5A1E876D2884C363009CB2FC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				5A1E876E2884C37C009CB2FC /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		5A1E877A2884CD3F009CB2FC /* OnboardView */ = {
+			isa = PBXGroup;
+			children = (
+				5A1E877B2884CD58009CB2FC /* OnboardingView.swift */,
+				5A1E87842884E051009CB2FC /* RootOnboardingView.swift */,
+			);
+			path = OnboardView;
+			sourceTree = "<group>";
+		};
+		5A1E877F2884CF66009CB2FC /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				5A1E87802884CF77009CB2FC /* CustomButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		5A1E87862884E24C009CB2FC /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				5A1E87872884E260009CB2FC /* MainView.swift */,
+			);
+			path = MainView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,8 +323,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A1E873F28849DBF009CB2FC /* Preview Assets.xcassets in Resources */,
+				5A1E87752884CB24009CB2FC /* Urbanist-Medium.ttf in Resources */,
 				5A1E873C28849DBF009CB2FC /* Assets.xcassets in Resources */,
 				5A1E874F2884A076009CB2FC /* GoogleService-Info.plist in Resources */,
+				5A1E87772884CB24009CB2FC /* Urbanist-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,14 +339,23 @@
 			files = (
 				5A1E875D2884A29D009CB2FC /* View.swift in Sources */,
 				5A1E876A2884A45B009CB2FC /* Image.swift in Sources */,
+				5A1E87762884CB24009CB2FC /* Fonts.swift in Sources */,
+				5A1E87812884CF77009CB2FC /* CustomButton.swift in Sources */,
 				5A1E87652884A3D8009CB2FC /* WebImageView.swift in Sources */,
-				5A1E873A28849DBE009CB2FC /* ContentView.swift in Sources */,
+				5A1E87882884E260009CB2FC /* MainView.swift in Sources */,
+				5A1E873A28849DBE009CB2FC /* StartView.swift in Sources */,
 				5A1E87572884A125009CB2FC /* FirebaseService.swift in Sources */,
 				5A1E87612884A36C009CB2FC /* ProgressLoader.swift in Sources */,
+				5A1E87712884C831009CB2FC /* UserDataService.swift in Sources */,
+				5A1E877E2884CDE6009CB2FC /* Color.swift in Sources */,
 				5A1E875F2884A2DD009CB2FC /* User.swift in Sources */,
 				5A1E873828849DBE009CB2FC /* Happy_Me_MeditationApp.swift in Sources */,
+				5A1E876F2884C37C009CB2FC /* LoginView.swift in Sources */,
 				5A1E876C2884A4DC009CB2FC /* LoginViewModel.swift in Sources */,
 				5A1E87632884A395009CB2FC /* UserAvatarViewComponent.swift in Sources */,
+				5A1E87852884E051009CB2FC /* RootOnboardingView.swift in Sources */,
+				5A1E877C2884CD58009CB2FC /* OnboardingView.swift in Sources */,
+				5A1E87832884D685009CB2FC /* OnboardConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +487,7 @@
 				DEVELOPMENT_TEAM = 92PU6D6MCQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Happy-Me-Meditation-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -436,6 +517,7 @@
 				DEVELOPMENT_TEAM = 92PU6D6MCQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Happy-Me-Meditation-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
