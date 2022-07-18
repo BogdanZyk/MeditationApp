@@ -51,6 +51,7 @@ extension OnboardingView{
                 VStack(spacing: 25) {
                     Image("welcome")
                         .resizable()
+                        .frame(maxHeight: 545)
                         .padding(.horizontal, -20)
                     Text("Welcome to Carefree")
                         .font(.fjallaOne(size: 30))
@@ -77,7 +78,7 @@ extension OnboardingView{
                 } label: {
                     Text("Skip")
                         .font(.urbMedium(size: 18))
-                        .foregroundColor(.primaryBtnOrange)
+                        .foregroundColor(.accentOrange)
                 }
                 Spacer()
                 CustomButton(title: "Next") {
@@ -100,6 +101,7 @@ extension OnboardingView{
         VStack(spacing: 20) {
             Image(step.image)
                 .resizable()
+                .frame(height: 470)
                 .padding(.horizontal, -20)
             Text(step.title)
                 .font(.fjallaOne(size: 30))
@@ -127,7 +129,7 @@ extension OnboardingView{
         HStack(spacing: 5) {
             ForEach(0...2, id: \.self){ index in
                 RoundedRectangle(cornerRadius: 5)
-                    .fill(Color.primaryBtnOrange)
+                    .fill(Color.accentOrange)
                     .frame(width: index == currentStep ? 40 : 15, height: 8)
                     .opacity(index == currentStep ? 1 : 0.5)
             }

@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Combine
 
 final class LoginViewModel: ObservableObject {
     
@@ -17,29 +16,17 @@ final class LoginViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var showAlert: Bool = false
     @Published var error: Error?
-    private var cancellable =  Set<AnyCancellable>()
     
     let userDataService: UserDataService
     
     init(userDataService: UserDataService =  UserDataService()){
         self.userDataService = userDataService
         checkLoginStatus()
-        startSubscriptions()
     }
     
     
-    private func startSubscriptions(){
-        userDataService.$showLoader
-            .combineLatest(userDataService.$error)
-            .dropFirst()
-            .sink(receiveValue: { (isLoading, error) in
-                if let err = error{
-                    self.error = err
-                    self.showAlert = true
-                }
-                self.isLoading = isLoading
-            })
-            .store(in: &cancellable)
+    public var isValidLoginForms: Bool{
+        !email.isEmpty && !password.isEmpty
     }
     
     
@@ -48,19 +35,45 @@ final class LoginViewModel: ObservableObject {
     }
     
     public func logIn(){
-        userDataService.logIn(email: email, password: password) { [weak self] in
-            self?.checkLoginStatus()
+        isLoading = true
+        userDataService.logIn(email: email, password: password) { [weak self] (result) in
+            self?.isLoading = false
+            self?.handleResult(result)
         }
     }
+    
     public func createAccount(){
-        userDataService.createAccount(email: email, password: password, username: userName) { [weak self] in
-            self?.checkLoginStatus()
+        isLoading = true
+        userDataService.createAccount(email: email, password: password, username: userName) { [weak self] (result) in
+            self?.isLoading = false
+            self?.handleResult(result)
         }
     }
+    
     public func logOut(){
         userDataService.logOut { [weak self] in
             self?.checkLoginStatus()
         }
+    }
+    
+    private func handleError(_ error: Error){
+        self.error = error
+        showAlert = true
+    }
+    
+    private func handleResult(_ result: Result<Bool, Error>){
+        switch result{
+        case .success(let success):
+            isloggedUser = success
+            resetUserInfo()
+        case .failure(let error):
+            handleError(error)
+        }
+    }
+    
+    private func resetUserInfo(){
+        email.removeAll()
+        password.removeAll()
     }
 }
 

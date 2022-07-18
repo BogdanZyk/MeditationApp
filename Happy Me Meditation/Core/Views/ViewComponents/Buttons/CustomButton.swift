@@ -22,7 +22,7 @@ struct CustomButton: View {
                 .foregroundColor(.backgroung)
                 .hCenter()
                 .frame(height: height)
-                .background(Color.primaryBtnOrange, in: RoundedRectangle(cornerRadius: 10))
+                .background(Color.accentOrange, in: RoundedRectangle(cornerRadius: 10))
         }
         .opacity(isDisabled ? 0.5 : 1)
         .disabled(isDisabled)

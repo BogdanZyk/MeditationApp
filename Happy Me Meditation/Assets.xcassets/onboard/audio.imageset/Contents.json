@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "Frame 25.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Frame 25.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },

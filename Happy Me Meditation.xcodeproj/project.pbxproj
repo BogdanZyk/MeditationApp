@@ -36,6 +36,8 @@
 		5A1E87832884D685009CB2FC /* OnboardConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E87822884D685009CB2FC /* OnboardConstants.swift */; };
 		5A1E87852884E051009CB2FC /* RootOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E87842884E051009CB2FC /* RootOnboardingView.swift */; };
 		5A1E87882884E260009CB2FC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E87872884E260009CB2FC /* MainView.swift */; };
+		5A1E878B2884E4E9009CB2FC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E878A2884E4E9009CB2FC /* CustomTextField.swift */; };
+		5A1E878D288599F9009CB2FC /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E878C288599F8009CB2FC /* UIApplication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		5A1E87822884D685009CB2FC /* OnboardConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardConstants.swift; sourceTree = "<group>"; };
 		5A1E87842884E051009CB2FC /* RootOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootOnboardingView.swift; sourceTree = "<group>"; };
 		5A1E87872884E260009CB2FC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		5A1E878A2884E4E9009CB2FC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		5A1E878C288599F8009CB2FC /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +209,7 @@
 				5A1E875C2884A29D009CB2FC /* View.swift */,
 				5A1E87692884A45A009CB2FC /* Image.swift */,
 				5A1E877D2884CDE6009CB2FC /* Color.swift */,
+				5A1E878C288599F8009CB2FC /* UIApplication.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 		5A1E875B2884A163009CB2FC /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				5A1E87892884E4D6009CB2FC /* TextFields */,
 				5A1E877F2884CF66009CB2FC /* Buttons */,
 				5A1E87602884A36C009CB2FC /* ProgressLoader.swift */,
 				5A1E87622884A395009CB2FC /* UserAvatarViewComponent.swift */,
@@ -251,6 +257,14 @@
 				5A1E87872884E260009CB2FC /* MainView.swift */,
 			);
 			path = MainView;
+			sourceTree = "<group>";
+		};
+		5A1E87892884E4D6009CB2FC /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				5A1E878A2884E4E9009CB2FC /* CustomTextField.swift */,
+			);
+			path = TextFields;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +355,7 @@
 				5A1E876A2884A45B009CB2FC /* Image.swift in Sources */,
 				5A1E87762884CB24009CB2FC /* Fonts.swift in Sources */,
 				5A1E87812884CF77009CB2FC /* CustomButton.swift in Sources */,
+				5A1E878B2884E4E9009CB2FC /* CustomTextField.swift in Sources */,
 				5A1E87652884A3D8009CB2FC /* WebImageView.swift in Sources */,
 				5A1E87882884E260009CB2FC /* MainView.swift in Sources */,
 				5A1E873A28849DBE009CB2FC /* StartView.swift in Sources */,
@@ -351,6 +366,7 @@
 				5A1E875F2884A2DD009CB2FC /* User.swift in Sources */,
 				5A1E873828849DBE009CB2FC /* Happy_Me_MeditationApp.swift in Sources */,
 				5A1E876F2884C37C009CB2FC /* LoginView.swift in Sources */,
+				5A1E878D288599F9009CB2FC /* UIApplication.swift in Sources */,
 				5A1E876C2884A4DC009CB2FC /* LoginViewModel.swift in Sources */,
 				5A1E87632884A395009CB2FC /* UserAvatarViewComponent.swift in Sources */,
 				5A1E87852884E051009CB2FC /* RootOnboardingView.swift in Sources */,
@@ -488,6 +504,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Happy-Me-Meditation-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Carefree;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -518,6 +535,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Happy-Me-Meditation-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Carefree;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

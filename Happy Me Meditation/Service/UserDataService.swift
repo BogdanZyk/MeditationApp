@@ -1,0 +1,73 @@
+//
+//  UserDataService.swift
+//  Happy Me Meditation
+//
+//  Created by Богдан Зыков on 18.07.2022.
+//
+
+import Foundation
+import FirebaseFirestoreSwift
+
+protocol UserDataServiceProtocol{
+    
+    func createAccount(email: String, password: String, username: String, completion: @escaping (Result<Bool, Error>) -> Void)
+    
+    func storeUserInformation(email: String, userName: String, completion: @escaping (Result<Bool, Error>) -> Void)
+    
+    func logIn(email: String, password: String, completion: @escaping (Result<Bool, Error>) -> Void)
+    
+    func logOut(completion: @escaping () -> Void)
+}
+
+
+final class UserDataService: UserDataServiceProtocol {
+    
+    
+    func logIn(email: String, password: String, completion: @escaping (Result<Bool, Error>) -> Void){
+        FirebaseManager.shared.auth.signIn(withEmail: email, password: password) {(result, error) in
+            if let error = error{
+                completion(.failure(error))
+                return
+            }
+            completion(.success(result?.user.uid != nil))
+        }
+    }
+    
+    func createAccount(email: String, password: String, username: String, completion: @escaping (Result<Bool, Error>) -> Void){
+        FirebaseManager.shared.auth.createUser(withEmail: email, password: password) {[weak self] (result, error) in
+            if let error = error{
+                completion(.failure(error))
+                return
+            }
+            self?.storeUserInformation(email: email, userName: username, completion: completion)
+        }
+    }
+    
+    func storeUserInformation(email: String, userName: String, completion: @escaping (Result<Bool, Error>) -> Void){
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {return}
+        let user = User(uid: uid, email: email, userName: userName)
+        do {
+            try  FirebaseManager.shared.firestore.collection("users")
+                .document(uid)
+                .setData(from: user, completion: { error in
+                    if let error = error{
+                        completion(.failure(error))
+                        return
+                    }
+                    completion(.success(true))
+                })
+        } catch {
+            completion(.failure(error))
+        }
+    }
+    
+    func logOut(completion: @escaping () -> Void) {
+        DispatchQueue.main.async {
+            try? FirebaseManager.shared.auth.signOut()
+            completion()
+        }
+    }
+   
+}
+
+

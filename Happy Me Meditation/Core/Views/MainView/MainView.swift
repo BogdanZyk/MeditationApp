@@ -8,13 +8,22 @@
 import SwiftUI
 
 struct MainView: View {
+    @EnvironmentObject var loginVM: LoginViewModel
     var body: some View {
-        Text("MainView")
+        VStack {
+            Text("MainView")
+            Button {
+                loginVM.logOut()
+            } label: {
+                Text("logOut")
+            }
+        }
     }
 }
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+            .environmentObject(LoginViewModel())
     }
 }

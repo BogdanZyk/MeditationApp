@@ -11,6 +11,7 @@ import SwiftUI
 extension Color {
     static let accentOrange = Color("accentOrange")
     static let backgroung = Color("bg")
-    static let primaryBtnOrange = Color("primaryBtnOrange")
     static let fontSecondary = Color("fontSecondary")
+    static let secondaryGreen = Color("secondaryGreen")
+    static let emerald = Color("emerald")
 }

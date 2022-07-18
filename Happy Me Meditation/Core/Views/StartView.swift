@@ -15,6 +15,7 @@ struct StartView: View {
             if isActive{
                 if loginVM.isloggedUser{
                     MainView()
+                        .environmentObject(loginVM)
                 }else{
                     RootOnboardingView()
                         .environmentObject(loginVM)
@@ -28,7 +29,7 @@ struct StartView: View {
                     }
             }
         }
-        .preferredColorScheme(.light)
+        .preferredColorScheme(.dark)
     }
 }
 
