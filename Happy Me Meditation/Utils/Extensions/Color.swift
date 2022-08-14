@@ -14,4 +14,5 @@ extension Color {
     static let fontSecondary = Color("fontSecondary")
     static let secondaryGreen = Color("secondaryGreen")
     static let emerald = Color("emerald")
+    static let mintGreen = Color("mintGreen")
 }

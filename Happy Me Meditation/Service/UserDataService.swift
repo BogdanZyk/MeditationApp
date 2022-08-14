@@ -45,7 +45,7 @@ final class UserDataService: UserDataServiceProtocol {
     
     func storeUserInformation(email: String, userName: String, completion: @escaping (Result<Bool, Error>) -> Void){
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {return}
-        let user = User(uid: uid, email: email, userName: userName)
+        let user = User(uid: uid, email: email, profileImageUrl: "", userName: userName)
         do {
             try  FirebaseManager.shared.firestore.collection("users")
                 .document(uid)
@@ -58,6 +58,19 @@ final class UserDataService: UserDataServiceProtocol {
                 })
         } catch {
             completion(.failure(error))
+        }
+    }
+    
+    
+    
+    func updateUserInformation(userName: String, profileImageUrl: URL?, completion: @escaping (Error?) -> Void){
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {return}
+        let userRef = FirebaseManager.shared.firestore.collection("users").document(uid)
+        userRef.updateData([
+            "userName" : userName,
+            "profileImageUrl": profileImageUrl?.absoluteString ?? ""
+                           ]) { error in
+            completion(error)
         }
     }
     

@@ -16,7 +16,7 @@ struct WebImageView: View {
     var body: some View {
         WebImage(url: imageUrl)
             .placeholder{
-                Color.gray
+                Color.secondaryGreen
             }
             .centerCropped()
     }

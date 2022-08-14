@@ -6,12 +6,14 @@
 //
 
 import Foundation
+import UIKit
 
 final class LoginViewModel: ObservableObject {
     
     @Published var isloggedUser: Bool = false
     @Published var userName: String = ""
     @Published var password: String = ""
+    @Published var userImage: UIImageData?
     @Published var email: String = ""
     @Published var isLoading: Bool = false
     @Published var showAlert: Bool = false
@@ -42,13 +44,23 @@ final class LoginViewModel: ObservableObject {
         }
     }
     
-    public func createAccount(){
+    public func createAccount(completion: @escaping () -> Void){
         isLoading = true
         userDataService.createAccount(email: email, password: password, username: userName) { [weak self] (result) in
             self?.isLoading = false
-            self?.handleResult(result)
+            switch result{
+            case .success(let success):
+                if success{
+                    completion()
+                }
+            case .failure(let error):
+                self?.handleError(error)
+            }
         }
     }
+    
+    
+
     
     public func logOut(){
         userDataService.logOut { [weak self] in
@@ -78,7 +90,24 @@ final class LoginViewModel: ObservableObject {
 }
 
 
-
-
+//Save image in server
+extension LoginViewModel{
+    
+    public func updateUserInfo(){
+        self.isLoading = true
+        Helpers.uploadImageToFirestore(uiImage: userImage?.image, imagePath: "User_images", path: userImage?.fileName ?? "no name") { [weak self] (url, error) in
+            guard let self = self else {return}
+            self.userDataService.updateUserInformation(userName: self.userName, profileImageUrl: url) { error in
+                self.isLoading = false
+                if let error = error {
+                    self.handleError(error)
+                    return
+                }
+                self.isloggedUser = true
+            }
+        }
+    }
+    
+}
 
 

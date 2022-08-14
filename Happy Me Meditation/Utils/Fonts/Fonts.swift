@@ -19,7 +19,7 @@ extension Font {
     }
     
     static func fjallaOne(size: Int) -> Font {
-        Font.custom("FjallaOne-Regular.ttf", size: CGFloat(size))
+        Font.custom("FjallaOne-Regular", size: CGFloat(size))
     }
 
 

@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A02710D28A91B8C0063F007 /* FjallaOne-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5A02710C28A91B8C0063F007 /* FjallaOne-Regular.otf */; };
+		5A02711028A927B20063F007 /* CourseCardViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A02710F28A927B20063F007 /* CourseCardViewComponent.swift */; };
+		5A02711228A932420063F007 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A02711128A932420063F007 /* Course.swift */; };
+		5A02711428A939580063F007 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A02711328A939580063F007 /* HomeViewModel.swift */; };
+		5A02711628A93A0A0063F007 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A02711528A93A0A0063F007 /* Preview.swift */; };
+		5A09018128A4663B00C971B7 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09018028A4663B00C971B7 /* PhotoPicker.swift */; };
+		5A09018428A46CD900C971B7 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09018328A46CD900C971B7 /* Helpers.swift */; };
+		5A09018628A4737D00C971B7 /* UserManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09018528A4737D00C971B7 /* UserManagerViewModel.swift */; };
 		5A1E873828849DBE009CB2FC /* Happy_Me_MeditationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E873728849DBE009CB2FC /* Happy_Me_MeditationApp.swift */; };
 		5A1E873A28849DBE009CB2FC /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E873928849DBE009CB2FC /* StartView.swift */; };
 		5A1E873C28849DBF009CB2FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A1E873B28849DBF009CB2FC /* Assets.xcassets */; };
@@ -38,9 +46,19 @@
 		5A1E87882884E260009CB2FC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E87872884E260009CB2FC /* MainView.swift */; };
 		5A1E878B2884E4E9009CB2FC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E878A2884E4E9009CB2FC /* CustomTextField.swift */; };
 		5A1E878D288599F9009CB2FC /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E878C288599F8009CB2FC /* UIApplication.swift */; };
+		5AD62C2B28A8532D0076FF1A /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD62C2A28A8532D0076FF1A /* MainViewModel.swift */; };
+		5AD62C2E28A85DD70076FF1A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD62C2D28A85DD70076FF1A /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A02710C28A91B8C0063F007 /* FjallaOne-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FjallaOne-Regular.otf"; sourceTree = "<group>"; };
+		5A02710F28A927B20063F007 /* CourseCardViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCardViewComponent.swift; sourceTree = "<group>"; };
+		5A02711128A932420063F007 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		5A02711328A939580063F007 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		5A02711528A93A0A0063F007 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
+		5A09018028A4663B00C971B7 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		5A09018328A46CD900C971B7 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		5A09018528A4737D00C971B7 /* UserManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagerViewModel.swift; sourceTree = "<group>"; };
 		5A1E873428849DBE009CB2FC /* Happy Me Meditation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Happy Me Meditation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A1E873728849DBE009CB2FC /* Happy_Me_MeditationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Happy_Me_MeditationApp.swift; sourceTree = "<group>"; };
 		5A1E873928849DBE009CB2FC /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
@@ -60,8 +78,6 @@
 		5A1E87722884CB24009CB2FC /* Urbanist-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Medium.ttf"; sourceTree = "<group>"; };
 		5A1E87732884CB24009CB2FC /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		5A1E87742884CB24009CB2FC /* Urbanist-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Regular.ttf"; sourceTree = "<group>"; };
-		5A1E87782884CB8C009CB2FC /* FjallaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FjallaOne-Regular.ttf"; sourceTree = "<group>"; };
-		5A1E87792884CBD4009CB2FC /* Happy-Me-Meditation-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Happy-Me-Meditation-Info.plist"; sourceTree = SOURCE_ROOT; };
 		5A1E877B2884CD58009CB2FC /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		5A1E877D2884CDE6009CB2FC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		5A1E87802884CF77009CB2FC /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -70,6 +86,8 @@
 		5A1E87872884E260009CB2FC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		5A1E878A2884E4E9009CB2FC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		5A1E878C288599F8009CB2FC /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		5AD62C2A28A8532D0076FF1A /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		5AD62C2D28A85DD70076FF1A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +106,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A02710E28A9278E0063F007 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5A02710F28A927B20063F007 /* CourseCardViewComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5A09018228A46CCC00C971B7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5A09018328A46CD900C971B7 /* Helpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		5A1E872B28849DBE009CB2FC = {
 			isa = PBXGroup;
 			children = (
@@ -107,7 +141,6 @@
 		5A1E873628849DBE009CB2FC /* Happy Me Meditation */ = {
 			isa = PBXGroup;
 			children = (
-				5A1E87792884CBD4009CB2FC /* Happy-Me-Meditation-Info.plist */,
 				5A1E873728849DBE009CB2FC /* Happy_Me_MeditationApp.swift */,
 				5A1E874E2884A076009CB2FC /* GoogleService-Info.plist */,
 				5A1E873B28849DBF009CB2FC /* Assets.xcassets */,
@@ -123,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				5A1E873E28849DBF009CB2FC /* Preview Assets.xcassets */,
+				5A02711528A93A0A0063F007 /* Preview.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -130,6 +164,7 @@
 		5A1E87502884A081009CB2FC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5A09018228A46CCC00C971B7 /* Helpers */,
 				5A1E875A2884A156009CB2FC /* Extensions */,
 				5A1E87592884A14C009CB2FC /* Fonts */,
 				5A1E87582884A147009CB2FC /* Constants */,
@@ -159,6 +194,7 @@
 		5A1E87532884A092009CB2FC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5AD62C2C28A85DCB0076FF1A /* Home */,
 				5A1E875B2884A163009CB2FC /* ViewComponents */,
 				5A1E87862884E24C009CB2FC /* MainView */,
 				5A1E877A2884CD3F009CB2FC /* OnboardView */,
@@ -172,6 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				5A1E876B2884A4DC009CB2FC /* LoginViewModel.swift */,
+				5A09018528A4737D00C971B7 /* UserManagerViewModel.swift */,
+				5A02711328A939580063F007 /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -180,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				5A1E875E2884A2DD009CB2FC /* User.swift */,
+				5A02711128A932420063F007 /* Course.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,7 +237,7 @@
 				5A1E87732884CB24009CB2FC /* Fonts.swift */,
 				5A1E87722884CB24009CB2FC /* Urbanist-Medium.ttf */,
 				5A1E87742884CB24009CB2FC /* Urbanist-Regular.ttf */,
-				5A1E87782884CB8C009CB2FC /* FjallaOne-Regular.ttf */,
+				5A02710C28A91B8C0063F007 /* FjallaOne-Regular.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -222,6 +261,7 @@
 				5A1E87602884A36C009CB2FC /* ProgressLoader.swift */,
 				5A1E87622884A395009CB2FC /* UserAvatarViewComponent.swift */,
 				5A1E87642884A3D8009CB2FC /* WebImageView.swift */,
+				5A09018028A4663B00C971B7 /* PhotoPicker.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -255,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				5A1E87872884E260009CB2FC /* MainView.swift */,
+				5AD62C2A28A8532D0076FF1A /* MainViewModel.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -265,6 +306,15 @@
 				5A1E878A2884E4E9009CB2FC /* CustomTextField.swift */,
 			);
 			path = TextFields;
+			sourceTree = "<group>";
+		};
+		5AD62C2C28A85DCB0076FF1A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5A02710E28A9278E0063F007 /* Components */,
+				5AD62C2D28A85DD70076FF1A /* HomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +391,7 @@
 				5A1E873C28849DBF009CB2FC /* Assets.xcassets in Resources */,
 				5A1E874F2884A076009CB2FC /* GoogleService-Info.plist in Resources */,
 				5A1E87772884CB24009CB2FC /* Urbanist-Regular.ttf in Resources */,
+				5A02710D28A91B8C0063F007 /* FjallaOne-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,19 +406,28 @@
 				5A1E876A2884A45B009CB2FC /* Image.swift in Sources */,
 				5A1E87762884CB24009CB2FC /* Fonts.swift in Sources */,
 				5A1E87812884CF77009CB2FC /* CustomButton.swift in Sources */,
+				5A09018428A46CD900C971B7 /* Helpers.swift in Sources */,
+				5AD62C2B28A8532D0076FF1A /* MainViewModel.swift in Sources */,
 				5A1E878B2884E4E9009CB2FC /* CustomTextField.swift in Sources */,
 				5A1E87652884A3D8009CB2FC /* WebImageView.swift in Sources */,
+				5A02711228A932420063F007 /* Course.swift in Sources */,
 				5A1E87882884E260009CB2FC /* MainView.swift in Sources */,
 				5A1E873A28849DBE009CB2FC /* StartView.swift in Sources */,
 				5A1E87572884A125009CB2FC /* FirebaseService.swift in Sources */,
 				5A1E87612884A36C009CB2FC /* ProgressLoader.swift in Sources */,
 				5A1E87712884C831009CB2FC /* UserDataService.swift in Sources */,
 				5A1E877E2884CDE6009CB2FC /* Color.swift in Sources */,
+				5A02711428A939580063F007 /* HomeViewModel.swift in Sources */,
+				5A09018128A4663B00C971B7 /* PhotoPicker.swift in Sources */,
+				5AD62C2E28A85DD70076FF1A /* HomeView.swift in Sources */,
 				5A1E875F2884A2DD009CB2FC /* User.swift in Sources */,
 				5A1E873828849DBE009CB2FC /* Happy_Me_MeditationApp.swift in Sources */,
 				5A1E876F2884C37C009CB2FC /* LoginView.swift in Sources */,
 				5A1E878D288599F9009CB2FC /* UIApplication.swift in Sources */,
+				5A02711628A93A0A0063F007 /* Preview.swift in Sources */,
+				5A02711028A927B20063F007 /* CourseCardViewComponent.swift in Sources */,
 				5A1E876C2884A4DC009CB2FC /* LoginViewModel.swift in Sources */,
+				5A09018628A4737D00C971B7 /* UserManagerViewModel.swift in Sources */,
 				5A1E87632884A395009CB2FC /* UserAvatarViewComponent.swift in Sources */,
 				5A1E87852884E051009CB2FC /* RootOnboardingView.swift in Sources */,
 				5A1E877C2884CD58009CB2FC /* OnboardingView.swift in Sources */,
@@ -508,6 +568,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -539,6 +600,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

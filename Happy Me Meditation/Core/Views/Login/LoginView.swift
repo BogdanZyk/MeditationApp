@@ -11,6 +11,8 @@ import SwiftUI
 struct LoginView: View {
     @EnvironmentObject var loginVM: LoginViewModel
     @State private var isLoginView: Bool = false
+    @State private var showPhotoPicker: Bool = false
+    @State private var showUserInfoView: Bool = false
     @FocusState private var isFocused: FocusField?
     @Environment(\.safeAreaInsets) private var safeAreaInsets
     var body: some View {
@@ -22,16 +24,25 @@ struct LoginView: View {
                 if isLoginView{
                     signInSection
                 }else{
-                    signUpSection
+                    if showUserInfoView{
+                        userInfoSection
+                    }else{
+                        signUpSection
+                    }
                 }
                 Spacer()
             }
+            .foregroundColor(.white)
             .padding(.horizontal, 20)
             .padding(.top, safeAreaInsets.top)
         }
         .ignoresSafeArea()
         .onTapGesture {
             UIApplication.shared.endEditing()
+        }
+        .sheet(isPresented: $showPhotoPicker) {
+            ImagePicker(image: $loginVM.userImage)
+                .preferredColorScheme(.dark)
         }
     }
 }
@@ -62,6 +73,7 @@ extension LoginView {
             .padding(.bottom, 10)
     }
     
+
     
     private var signInSection: some View{
         Group{
@@ -80,6 +92,8 @@ extension LoginView {
         }
         .transition(.asymmetric(insertion: .slide, removal: .opacity))
     }
+    
+
     
     
     private var bottomSectionButton: some View{
@@ -133,7 +147,11 @@ extension LoginView {
                     if isLoginView{
                         loginVM.logIn()
                     }else{
-                        loginVM.createAccount()
+                        loginVM.createAccount{
+                            withAnimation(.easeOut(duration: 0.2))  {
+                                showUserInfoView.toggle()
+                            }
+                        }
                     }
                 }
                 .animation(nil, value: UUID().uuidString)
@@ -168,7 +186,6 @@ extension LoginView {
                   }
                 }
                 .font(.urbMedium(size: 18))
-                .foregroundColor(.white)
                 .hCenter()
                 .frame(height: 50)
                 .background(Color.emerald.opacity(0.2), in: RoundedRectangle(cornerRadius: 10))
@@ -177,8 +194,60 @@ extension LoginView {
     }
 }
 
+extension LoginView{
+    private var userInfoSection: some View{
+        VStack(alignment: .leading, spacing: 40){
+            VStack(alignment: .leading, spacing: 20) {
+                Text("How can we call you?")
+                CustomTextField(text: $loginVM.userName, promt: "Type your name here", isSecureTF: false, isFocused: isFocused == .name)
+                    .focused($isFocused, equals: .name)
+            }
+            VStack(alignment: .leading, spacing: 20) {
+                Text("Add your photo (optional)")
+                Button {
+                    showPhotoPicker.toggle()
+                } label: {
+                    ZStack{
+                        if let uiImage = loginVM.userImage?.image{
+                            Image(uiImage: uiImage)
+                                .resizable()
+                        }else{
+                            Color.emerald.opacity(0.2)
+                            Image("avatarPlaceholder")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 135, height: 135)
+                        }
+                    }
+                    .cornerRadius(20)
+                    .frame(height: 160)
+                    
+                }
+                
+            }
+            Group{
+                if loginVM.isLoading{
+                    ProgressLoader(color: .accentOrange, scaleEffect: 1.5)
+                        .frame(height: 50)
+                }else{
+                    CustomButton(title: "Confirm", isDisabled: loginVM.userName.isEmpty) {
+                        loginVM.updateUserInfo()
+                    }
+                    
+                }
+            }
+            .hCenter()
+            .padding(.top, 20)
+            
+        }
+        .font(.fjallaOne(size: 23))
+        .transition(.asymmetric(insertion: .slide, removal: .opacity))
+    }
+}
+
 
 enum FocusField{
     case email
     case pass
+    case name
 }
