@@ -23,7 +23,8 @@ struct CourseCardViewComponent: View {
             image
             textContentSection
         }
-        .frame(width: isDailyCourse ? .infinity : 320, height: isDailyCourse ? 133 : 160)
+        .frame(maxWidth: isDailyCourse ? .infinity : 320)
+        .frame(height: isDailyCourse ? 133 : 160)
         .cornerRadius(20)
     }
 }
@@ -38,8 +39,8 @@ struct CourseCardViewComponent_Previews: PreviewProvider {
 extension CourseCardViewComponent{
     private var image: some View{
         ZStack{
-            if let image = course?.courseImageUrl, let url = URL(string: image) {
-                WebImageView(contentMode: .fill, imageUrl: url)
+            if let image = course?.courseImageUrl{
+                CustomLazyImage(strUrl: image)
             }
             LinearGradient(colors: [.black.opacity(0.4), .clear], startPoint: .leading, endPoint: .trailing)
         }

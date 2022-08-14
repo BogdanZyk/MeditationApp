@@ -12,14 +12,11 @@ struct UserAvatarViewComponent: View {
     var size: CGSize = .init(width: 37, height: 37)
     var body: some View {
         Group{
-            if let image = pathImage, let imageUrl = URL(string: image){
-                WebImageView(imageUrl: imageUrl)
+            if let image = pathImage{
+                CustomLazyImage(strUrl: image)
             }else{
                 ZStack{
                     Color.gray
-                    Image("avatarDefault")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
                 }
             }
         }

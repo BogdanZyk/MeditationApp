@@ -12,6 +12,7 @@ struct MainView: View {
     @StateObject var userManager = UserManagerViewModel()
     @EnvironmentObject var loginVM: LoginViewModel
     init(){
+    
         UITabBar.appearance().isHidden = true
     }
 
@@ -20,7 +21,6 @@ struct MainView: View {
             ZStack(alignment: .bottom) {
                 TabView(selection: $mainVM.currentTab) {
                     HomeView()
-                        .navigationBarHidden(true)
                         .tag(Tab.home)
                     Text("favourites")
                         .tag(Tab.favourites)
@@ -34,6 +34,8 @@ struct MainView: View {
                 }
                 tabBar
             }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(true)
         }
     }
 }

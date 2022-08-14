@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject private var homeVM = HomeViewModel()
+    @State private var showCourseDetails: Bool = false
     var body: some View {
         VStack(alignment: .leading, spacing: 0){
             ScrollView(.vertical, showsIndicators: false){
@@ -23,6 +24,13 @@ struct HomeView: View {
                 }
                 .padding(.horizontal, 20)
                 .padding(.bottom, 80)
+                
+                NavigationLink(isActive: $showCourseDetails) {
+                    
+                } label: {
+                    EmptyView()
+                }
+
             }
         }
         .foregroundColor(.white)
@@ -119,7 +127,11 @@ extension HomeView{
     private var dailyPracticeSection: some View{
         VStack(alignment: .leading, spacing: 20) {
             sectionHeader("Daily Practice", subTitle: "We suggest you daily quick session according to your goals and preferences")
-            CourseCardViewComponent(course: MockData.dailyCourse)
+            Button {
+                showCourseDetails.toggle()
+            } label: {
+                CourseCardViewComponent(course: MockData.dailyCourse)
+            }
         }
     }
 }
