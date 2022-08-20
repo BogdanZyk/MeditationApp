@@ -6,23 +6,27 @@
 //
 
 import Foundation
-
+import Firebase
 
 final class HomeViewModel: ObservableObject{
     
     
     let course = MockData.course
-    
-    
+    @Published var recomendedCourses: [Course]? = []
+    @Published var dailyCourses: [Course]? = []
+    @Published var errorMessage: String = ""
+    @Published var showAlert: Bool = false
     
     init(){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.uploadData()
-        }
+        fetchDailyCourse()
+        fetchRecomendedCourse()
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//            self.uploadData()
+//        }
         
     }
     
-    
+//https://firebasestorage.googleapis.com/v0/b/happy-me-meditation.appspot.com/o/audio%2Fmixkit-just-chill-16.mp3?alt=media&token=5eee7bde-6d2e-4dc8-b199-430a1999df37
     
     func uploadData(){
         addData(course: MockData.dailyCourse)
@@ -50,24 +54,49 @@ final class HomeViewModel: ObservableObject{
         }
         
     }
+    
+    
+    
+    func fetchRecomendedCourse(){
+        FirebaseManager.shared.firestore
+            .collection("recomended_course")
+            .getDocuments {[weak self] (documentSnapshot, error) in
+                guard let self = self else {return}
+                self.handleError(error, title: "Failed to fetch Recomended Course")
+                documentSnapshot?.documents.forEach({ snapshot in
+                    self.saveReturnedCourse(snapshot, courses: &self.recomendedCourses)
+                })
+            }
+    }
+    
+    func fetchDailyCourse(){
+        FirebaseManager.shared.firestore
+            .collection("daily_course")
+            .getDocuments {[weak self] (documentSnapshot, error) in
+                guard let self = self else {return}
+                self.handleError(error, title: "Failed to fetch Daily Course")
+                documentSnapshot?.documents.forEach({ snapshot in
+                    self.saveReturnedCourse(snapshot, courses: &self.recomendedCourses)
+                })
+            }
+    }
+    
+    
+    
+    private func saveReturnedCourse(_ snapshot: QueryDocumentSnapshot, courses: inout [Course]?){
+        do{
+            let returnedCourse = try snapshot.data(as: Course.self)
+            courses?.append(returnedCourse)
+        }catch{
+            self.handleError(error, title: "Failed to decode course data")
+        }
+    }
+    
+    private func handleError(_ error: Error?, title: String){
+        Helpers.handleError(error, title: title, errorMessage: &errorMessage, showAlert: &showAlert)
+    }
 }
 
 
 
-//private func storeUserInformation(_ profileImageUrl: URL?, completion: @escaping () -> Void){
-//    guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {return}
-//    let user = User(uid: uid, email: email, profileImageUrl: profileImageUrl?.absoluteString ?? "", userName: userName, firstName: userFirstName, lastName: "", bio: userBio, userBannerUrl: "", phone: "")
-//    do {
-//        try  FirebaseManager.shared.firestore.collection("users")
-//            .document(uid).setData(from: user, completion: { error in
-//                if let error = error{
-//                    self.handleError(error, title: "Filed to set user data")
-//                    return
-//                }
-//                completion()
-//            })
-//    } catch {
-//        handleError(error, title: "Filed to set user data")
-//    }
-//
-//}
+

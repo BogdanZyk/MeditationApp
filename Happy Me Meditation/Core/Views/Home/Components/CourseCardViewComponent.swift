@@ -23,7 +23,7 @@ struct CourseCardViewComponent: View {
             image
             textContentSection
         }
-        .frame(maxWidth: isDailyCourse ? .infinity : 320)
+        .frame(width:  isDailyCourse  ? (getRect().width - 32)  : (getRect().width / 1.2))
         .frame(height: isDailyCourse ? 133 : 160)
         .cornerRadius(20)
     }
@@ -31,8 +31,12 @@ struct CourseCardViewComponent: View {
 
 struct CourseCardViewComponent_Previews: PreviewProvider {
     static var previews: some View {
-        CourseCardViewComponent(course: MockData.course)
-            .padding()
+        Button {
+            
+        } label: {
+            CourseCardViewComponent(course: MockData.course)
+        }
+        .padding()
     }
 }
 
@@ -53,6 +57,7 @@ extension CourseCardViewComponent{
                 Text(course?.title ?? "")
                     .font(.title3)
                 .fontWeight(.bold)
+                .hLeading()
                 Spacer()
                 if isNewCourse{
                     newLabel
@@ -60,21 +65,26 @@ extension CourseCardViewComponent{
             }
             Text(course?.subtitle ?? "")
                 .font(.urbMedium(size: 12))
+                .multilineTextAlignment(.leading)
                 .frame(maxWidth: 160, alignment: .leading)
             Spacer()
             Group{
                 if isDailyCourse{
                     Text(course?.date ?? "")
+                        .padding(.bottom, 10)
                 }else{
                     Text("Duration: \(course?.courseDuration ?? 0) days | ~ \((course?.duration ?? 0).secondsToMin())")
+                        .padding(.top, 10)
                 }
             }
             .font(.urbMedium(size: 12))
-            .foregroundColor(.fontSecondary)
+            .foregroundColor(.fontSecondary.opacity(0.6))
+            
         }
-        .padding(.vertical, 20)
+        .padding(.top, 20)
         .padding(.leading, 16)
         .foregroundColor(.white)
+        .fixedSize(horizontal: false, vertical: true)
     }
     
     private var newLabel: some View{

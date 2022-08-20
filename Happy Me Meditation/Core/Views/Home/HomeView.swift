@@ -22,7 +22,7 @@ struct HomeView: View {
                     recommendedCoursesSection
                     newlyAddedSection
                 }
-                .padding(.horizontal, 20)
+                .padding(.horizontal)
                 .padding(.bottom, 80)
                 
                 NavigationLink(isActive: $showCourseDetails) {
@@ -92,8 +92,8 @@ extension HomeView{
                         .frame(width: 80, height: 80)
                     }
                 }
-                .padding(.leading, 20)
-            }.padding(.horizontal, -20)
+                .padding(.leading)
+            }.padding(.horizontal, -16)
         }
     }
     
@@ -127,6 +127,8 @@ extension HomeView{
     private var dailyPracticeSection: some View{
         VStack(alignment: .leading, spacing: 20) {
             sectionHeader("Daily Practice", subTitle: "We suggest you daily quick session according to your goals and preferences")
+            
+           
             Button {
                 showCourseDetails.toggle()
             } label: {
@@ -149,9 +151,9 @@ extension HomeView {
                            .frame(width: 300, height: 80)
                    }
                }
-               .padding(.horizontal, 20)
+               .padding(.horizontal)
            }
-           .padding(.horizontal, -20)
+           .padding(.horizontal, -16)
         }
     }
 }
@@ -164,14 +166,25 @@ extension HomeView {
              sectionHeader("Recommended courses", subTitle: "Short sessions will definetely come in handy in stressful situations")
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHGrid(rows: rows, alignment: .center, spacing: 20) {
-                    ForEach(1...4, id: \.self) { _ in
-                        RoundedRectangle(cornerRadius: 20)
-                            .frame(width: 320, height: 160)
+                    if let courses = homeVM.recomendedCourses, !courses.isEmpty{
+                        ForEach(courses, id: \.id) { course in
+                            Button {
+                                showCourseDetails.toggle()
+                            } label: {
+                                CourseCardViewComponent(course: course)
+                            }
+                        }
+                    }else{
+                        ForEach(1...4, id: \.self) { _ in
+                            RoundedRectangle(cornerRadius: 20)
+                                .fill(Color.secondaryGreen)
+                                .frame(width: 320, height: 160)
+                        }
                     }
                 }
-                .padding(.horizontal, 20)
+                .padding(.horizontal)
             }
-            .padding(.horizontal, -20)
+            .padding(.horizontal, -16)
         }
     }
 }
@@ -188,9 +201,9 @@ extension HomeView {
                             .frame(width: 320, height: 160)
                     }
                 }
-                .padding(.horizontal, 20)
+                .padding(.horizontal)
             }
-            .padding(.horizontal, -20)
+            .padding(.horizontal, -16)
         }
     }
 }
