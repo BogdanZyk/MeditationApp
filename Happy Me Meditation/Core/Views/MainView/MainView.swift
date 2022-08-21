@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
+    @StateObject var audioManager = AudioManager()
     @StateObject var mainVM = MainViewModel()
     @StateObject var userManager = UserManagerViewModel()
     @EnvironmentObject var loginVM: LoginViewModel
@@ -22,6 +23,7 @@ struct MainView: View {
                 TabView(selection: $mainVM.currentTab) {
                     HomeView()
                         .tag(Tab.home)
+                        .environmentObject(audioManager)
                     Text("favourites")
                         .tag(Tab.favourites)
                     Text("saved")

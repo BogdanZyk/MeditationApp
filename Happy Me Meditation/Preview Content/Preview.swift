@@ -30,4 +30,17 @@ final class MockData{
     ]
     
   
+    static let sessions: [Session] = [
+    
+    Session(title: "Get rid of anger", duration: 240, imageUrl: "https://firebasestorage.googleapis.com/v0/b/happy-me-meditation.appspot.com/o/course_Images%2Fzach-vessels-nqgyiwr2U60-unsplash.jpg?alt=media&token=e6cc4469-5b17-46f6-988d-a5dc464ea6fe", audioURL: ""),
+    Session(title: "Overcome the blues", duration: 480, imageUrl: "", audioURL: ""),
+    Session(title: "Focus on work", duration: 420, imageUrl: "", audioURL: ""),
+    Session(title: "Better Sleep", duration: 360, imageUrl: "", audioURL: ""),
+    Session(title: "Numb pain", duration: 240, imageUrl: "", audioURL: ""),
+    Session(title: "Prepare for a meeting", duration: 120, imageUrl: "", audioURL: ""),
+    Session(title: "Deal with panic", duration: 420, imageUrl: "", audioURL: ""),
+    Session(title: "Better Sleep", duration: 360, imageUrl: "", audioURL: "")
+    ]
+    
+    
 }

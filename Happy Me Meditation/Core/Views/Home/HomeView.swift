@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var audioManager: AudioManager
     @StateObject private var homeVM = HomeViewModel()
     @State private var showCourseDetails: Bool = false
+    @State private var showShortSessions: Bool = false
     var body: some View {
         VStack(alignment: .leading, spacing: 0){
             ScrollView(.vertical, showsIndicators: false){
@@ -30,9 +32,16 @@ struct HomeView: View {
                 } label: {
                     EmptyView()
                 }
-
+                
+                NavigationLink(isActive: $showShortSessions) {
+                    PlayerView(url: homeVM.selectedSession?.audioURL, title: homeVM.selectedSession?.title)
+                        .environmentObject(audioManager)
+                } label: {
+                    EmptyView()
+                }
             }
         }
+   
         .foregroundColor(.white)
         .allFrame()
         .background{
@@ -44,6 +53,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(AudioManager())
     }
 }
 
@@ -146,9 +156,21 @@ extension HomeView {
             sectionHeader("Emergency helpers", subTitle: "Short sessions will definetely come in handy in stressful situations")
            ScrollView(.horizontal, showsIndicators: false) {
                LazyHGrid(rows: rows, alignment: .center, spacing: 20) {
-                   ForEach(1...8, id: \.self) { _ in
-                       RoundedRectangle(cornerRadius: 20)
-                           .frame(width: 300, height: 80)
+                   if let sessions = homeVM.shortSessions, !sessions.isEmpty{
+                       ForEach(sessions, id: \.id) { session in
+                           Button {
+                               homeVM.selectedSession = session
+                               showShortSessions.toggle()
+                           } label: {
+                               SessionRowViewComponent(session: session)
+                           }
+                       }
+                   }else{
+                       ForEach(1...8, id: \.self) { _ in
+                           RoundedRectangle(cornerRadius: 20)
+                               .fill(Color.secondaryGreen)
+                               .frame(width: 300, height: 80)
+                       }
                    }
                }
                .padding(.horizontal)

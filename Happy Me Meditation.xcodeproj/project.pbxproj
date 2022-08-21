@@ -46,6 +46,12 @@
 		5A1E87882884E260009CB2FC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E87872884E260009CB2FC /* MainView.swift */; };
 		5A1E878B2884E4E9009CB2FC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E878A2884E4E9009CB2FC /* CustomTextField.swift */; };
 		5A1E878D288599F9009CB2FC /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E878C288599F8009CB2FC /* UIApplication.swift */; };
+		5A804FAA28B259F400E44681 /* PlaybackControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A804FA928B259F400E44681 /* PlaybackControlButton.swift */; };
+		5A804FAC28B2763F00E44681 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A804FAB28B2763F00E44681 /* Date.swift */; };
+		5AA2786628B13F9D00BDAACD /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA2786528B13F9D00BDAACD /* Session.swift */; };
+		5AA2786828B141FA00BDAACD /* SessionRowViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA2786728B141FA00BDAACD /* SessionRowViewComponent.swift */; };
+		5AA2786B28B1462A00BDAACD /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA2786A28B1462A00BDAACD /* AudioManager.swift */; };
+		5AA2786E28B1482300BDAACD /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA2786D28B1482300BDAACD /* PlayerView.swift */; };
 		5AD62C2B28A8532D0076FF1A /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD62C2A28A8532D0076FF1A /* MainViewModel.swift */; };
 		5AD62C2E28A85DD70076FF1A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD62C2D28A85DD70076FF1A /* HomeView.swift */; };
 /* End PBXBuildFile section */
@@ -86,6 +92,12 @@
 		5A1E87872884E260009CB2FC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		5A1E878A2884E4E9009CB2FC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		5A1E878C288599F8009CB2FC /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		5A804FA928B259F400E44681 /* PlaybackControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackControlButton.swift; sourceTree = "<group>"; };
+		5A804FAB28B2763F00E44681 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		5AA2786528B13F9D00BDAACD /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		5AA2786728B141FA00BDAACD /* SessionRowViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRowViewComponent.swift; sourceTree = "<group>"; };
+		5AA2786A28B1462A00BDAACD /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		5AA2786D28B1482300BDAACD /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		5AD62C2A28A8532D0076FF1A /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		5AD62C2D28A85DD70076FF1A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				5A02710F28A927B20063F007 /* CourseCardViewComponent.swift */,
+				5AA2786728B141FA00BDAACD /* SessionRowViewComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -164,6 +177,7 @@
 		5A1E87502884A081009CB2FC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5AA2786928B145F400BDAACD /* AVPlayer */,
 				5A09018228A46CCC00C971B7 /* Helpers */,
 				5A1E875A2884A156009CB2FC /* Extensions */,
 				5A1E87592884A14C009CB2FC /* Fonts */,
@@ -194,6 +208,7 @@
 		5A1E87532884A092009CB2FC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5AA2786C28B1481600BDAACD /* PlayerView */,
 				5AD62C2C28A85DCB0076FF1A /* Home */,
 				5A1E875B2884A163009CB2FC /* ViewComponents */,
 				5A1E87862884E24C009CB2FC /* MainView */,
@@ -219,6 +234,7 @@
 			children = (
 				5A1E875E2884A2DD009CB2FC /* User.swift */,
 				5A02711128A932420063F007 /* Course.swift */,
+				5AA2786528B13F9D00BDAACD /* Session.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -249,6 +265,7 @@
 				5A1E87692884A45A009CB2FC /* Image.swift */,
 				5A1E877D2884CDE6009CB2FC /* Color.swift */,
 				5A1E878C288599F8009CB2FC /* UIApplication.swift */,
+				5A804FAB28B2763F00E44681 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -262,6 +279,7 @@
 				5A1E87622884A395009CB2FC /* UserAvatarViewComponent.swift */,
 				5A1E87642884A3D8009CB2FC /* CustomLazyImage.swift */,
 				5A09018028A4663B00C971B7 /* PhotoPicker.swift */,
+				5A804FA928B259F400E44681 /* PlaybackControlButton.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -306,6 +324,22 @@
 				5A1E878A2884E4E9009CB2FC /* CustomTextField.swift */,
 			);
 			path = TextFields;
+			sourceTree = "<group>";
+		};
+		5AA2786928B145F400BDAACD /* AVPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				5AA2786A28B1462A00BDAACD /* AudioManager.swift */,
+			);
+			path = AVPlayer;
+			sourceTree = "<group>";
+		};
+		5AA2786C28B1481600BDAACD /* PlayerView */ = {
+			isa = PBXGroup;
+			children = (
+				5AA2786D28B1482300BDAACD /* PlayerView.swift */,
+			);
+			path = PlayerView;
 			sourceTree = "<group>";
 		};
 		5AD62C2C28A85DCB0076FF1A /* Home */ = {
@@ -404,12 +438,15 @@
 			files = (
 				5A1E875D2884A29D009CB2FC /* View.swift in Sources */,
 				5A1E876A2884A45B009CB2FC /* Image.swift in Sources */,
+				5AA2786828B141FA00BDAACD /* SessionRowViewComponent.swift in Sources */,
 				5A1E87762884CB24009CB2FC /* Fonts.swift in Sources */,
 				5A1E87812884CF77009CB2FC /* CustomButton.swift in Sources */,
 				5A09018428A46CD900C971B7 /* Helpers.swift in Sources */,
 				5AD62C2B28A8532D0076FF1A /* MainViewModel.swift in Sources */,
+				5A804FAC28B2763F00E44681 /* Date.swift in Sources */,
 				5A1E878B2884E4E9009CB2FC /* CustomTextField.swift in Sources */,
 				5A1E87652884A3D8009CB2FC /* CustomLazyImage.swift in Sources */,
+				5AA2786B28B1462A00BDAACD /* AudioManager.swift in Sources */,
 				5A02711228A932420063F007 /* Course.swift in Sources */,
 				5A1E87882884E260009CB2FC /* MainView.swift in Sources */,
 				5A1E873A28849DBE009CB2FC /* StartView.swift in Sources */,
@@ -417,10 +454,13 @@
 				5A1E87612884A36C009CB2FC /* ProgressLoader.swift in Sources */,
 				5A1E87712884C831009CB2FC /* UserDataService.swift in Sources */,
 				5A1E877E2884CDE6009CB2FC /* Color.swift in Sources */,
+				5A804FAA28B259F400E44681 /* PlaybackControlButton.swift in Sources */,
 				5A02711428A939580063F007 /* HomeViewModel.swift in Sources */,
 				5A09018128A4663B00C971B7 /* PhotoPicker.swift in Sources */,
 				5AD62C2E28A85DD70076FF1A /* HomeView.swift in Sources */,
 				5A1E875F2884A2DD009CB2FC /* User.swift in Sources */,
+				5AA2786E28B1482300BDAACD /* PlayerView.swift in Sources */,
+				5AA2786628B13F9D00BDAACD /* Session.swift in Sources */,
 				5A1E873828849DBE009CB2FC /* Happy_Me_MeditationApp.swift in Sources */,
 				5A1E876F2884C37C009CB2FC /* LoginView.swift in Sources */,
 				5A1E878D288599F9009CB2FC /* UIApplication.swift in Sources */,
