@@ -12,8 +12,16 @@ import FirebaseFirestore
 struct Session: Codable, Identifiable{
     var id: String = UUID().uuidString
     var title: String?
-    var duration: Int?
     var imageUrl: String?
+    var audio: Audio?
+    
+}
+
+struct Audio: Codable, Identifiable{
+    var id: String = UUID().uuidString
+    var title: String?
+    var description: String?
+    var duration: Int?
     var audioURL: String?
 }
 

@@ -14,7 +14,7 @@ final class AudioManager: ObservableObject{
     
     
     var audioPlayer = AVPlayer()
-    var audioURl: String?
+    var audio: Audio?
     @Published var currentRate: Float = 1.0
     @Published var isPlaying: Bool = false
     @Published var currentTime: Double = .zero
@@ -39,7 +39,7 @@ final class AudioManager: ObservableObject{
     
     
     func setCurrentItem(){
-        guard let strUrl = audioURl, let url = URL(string: strUrl) else {return}
+        guard let strUrl = audio?.audioURL, let url = URL(string: strUrl) else {return}
         let item = AVPlayerItem(url: url)
         
         do{

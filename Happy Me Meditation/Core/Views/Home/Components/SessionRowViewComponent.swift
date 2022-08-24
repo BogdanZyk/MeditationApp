@@ -37,7 +37,7 @@ extension SessionRowViewComponent{
                 .font(.title3)
                 .fontWeight(.bold)
                 .foregroundColor(.white)
-            Text("Duration: \((session?.duration ?? 0).secondsToMin())")
+            Text("Duration: \((session?.audio?.duration ?? 0).secondsToMin())")
                 .font(.urbMedium(size: 12))
                 .foregroundColor(.fontSecondary.opacity(0.6))
         }

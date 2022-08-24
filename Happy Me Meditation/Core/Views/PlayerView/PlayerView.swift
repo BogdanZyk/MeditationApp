@@ -10,9 +10,7 @@ import SwiftUI
 struct PlayerView: View {
     @EnvironmentObject var audioManager: AudioManager
     @Environment(\.dismiss) var dismiss
-    var url: String?
-    var title: String?
-    var subtitle: String?
+    var audio: Audio?
     var body: some View {
         ZStack{
             bgImage
@@ -26,8 +24,8 @@ struct PlayerView: View {
             .padding(.horizontal)
         }
         .onAppear{
-            if let url = url, !audioManager.isPlaying {
-                audioManager.audioURl = url
+            if let audio = audio, !audioManager.isPlaying {
+                audioManager.audio = audio
                 audioManager.setCurrentItem()
                 audioManager.audioPlayer.play()
             }
@@ -39,7 +37,7 @@ struct PlayerView: View {
 
 struct PlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerView(title: "Deep Concentration", subtitle: "How to keep focus on your needs during the day in such a hectic world")
+        PlayerView()
             .environmentObject(AudioManager())
     }
 }
@@ -106,7 +104,7 @@ extension PlayerView{
     
     private var soundInfoView: some View{
         Group{
-            if let title = title{
+            if let title = audio?.title{
                 VStack(spacing: 20) {
                     ZStack{
                         Color.white.opacity(0.15)
@@ -119,8 +117,8 @@ extension PlayerView{
                     Text(title)
                         .font(.title)
                         .fontWeight(.bold)
-                    if let subtitle = subtitle{
-                        Text(subtitle)
+                    if let description = audio?.description{
+                        Text(description)
                             .font(.urbRegular(size: 18))
                             .multilineTextAlignment(.center)
                     }

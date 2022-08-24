@@ -34,7 +34,7 @@ struct HomeView: View {
                 }
                 
                 NavigationLink(isActive: $showShortSessions) {
-                    PlayerView(url: homeVM.selectedSession?.audioURL, title: homeVM.selectedSession?.title)
+                    PlayerView(audio: homeVM.selectedSession?.audio)
                         .environmentObject(audioManager)
                 } label: {
                     EmptyView()
@@ -138,11 +138,16 @@ extension HomeView{
         VStack(alignment: .leading, spacing: 20) {
             sectionHeader("Daily Practice", subTitle: "We suggest you daily quick session according to your goals and preferences")
             
-           
-            Button {
-                showCourseDetails.toggle()
-            } label: {
-                CourseCardViewComponent(course: MockData.dailyCourse)
+            if let dilyCourse = homeVM.dailyCourses?.first{
+                Button {
+                    showCourseDetails.toggle()
+                } label: {
+                    CourseCardViewComponent(course: dilyCourse)
+                }
+            }else{
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(Color.secondaryGreen)
+                    .frame(width: 300, height: 80)
             }
         }
     }

@@ -18,11 +18,10 @@ struct Course: Codable, Identifiable{
     var duration: Int?
     var courseDuration: Int?
     var courseImageUrl: String?
-    var audioURL: String?
     var isDaily: Bool?
     var isNew: Bool?
     var timestamp: Timestamp = Timestamp(date: .now)
-    
+    var audios: [Audio]? = []
     
     var date: String{
         timestamp.dateValue().formatted(date: .abbreviated, time: .omitted)

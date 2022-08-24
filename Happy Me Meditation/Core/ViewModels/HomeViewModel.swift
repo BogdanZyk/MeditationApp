@@ -33,40 +33,39 @@ final class HomeViewModel: ObservableObject{
         
     }
     
-//https://firebasestorage.googleapis.com/v0/b/happy-me-meditation.appspot.com/o/audio%2Fmixkit-just-chill-16.mp3?alt=media&token=5eee7bde-6d2e-4dc8-b199-430a1999df37
-    
+
 //    func uploadData(){
-//       // addData(course: MockData.dailyCourse)
-//        MockData.sessions.forEach { session in
-//            addData(course: session)
+////        addData(course: MockData.dailyCourse)
+//        MockData.recomendedCourse.forEach { course in
+//            addData(course: course)
 //        }
 //    }
-    
-    
-    func addData(course: Session){
-        do {
-            try FirebaseManager.shared.firestore
-                .collection("short_sessions")
-                .document()
-                .setData(from: course, completion: { error in
-                    if let error = error{
-                        print(error.localizedDescription)
-                    }
-                    print("data set")
-                })
-            print("data set finish")
-            
-        } catch let error{
-            print(error.localizedDescription)
-        }
-        
-    }
+//
+//
+//    func addData(course: Course){
+//        do {
+//            try FirebaseManager.shared.firestore
+//                .collection(FBConstants.RECOMENDED_COURSES)
+//                .document()
+//                .setData(from: course, completion: { error in
+//                    if let error = error{
+//                        print(error.localizedDescription)
+//                    }
+//                    print("data set")
+//                })
+//            print("data set finish")
+//
+//        } catch let error{
+//            print(error.localizedDescription)
+//        }
+//
+//    }
     
     
     
     func fetchRecomendedCourse(){
         FirebaseManager.shared.firestore
-            .collection("recomended_course")
+            .collection(FBConstants.RECOMENDED_COURSES)
             .getDocuments {[weak self] (documentSnapshot, error) in
                 guard let self = self else {return}
                 self.handleError(error, title: "Failed to fetch Recomended Course")
@@ -78,19 +77,19 @@ final class HomeViewModel: ObservableObject{
     
     func fetchDailyCourse(){
         FirebaseManager.shared.firestore
-            .collection("daily_course")
+            .collection(FBConstants.DAILY_COURSE)
             .getDocuments {[weak self] (documentSnapshot, error) in
                 guard let self = self else {return}
                 self.handleError(error, title: "Failed to fetch Daily Course")
                 documentSnapshot?.documents.forEach({ snapshot in
-                    self.saveReturnedCourse(snapshot, courses: &self.recomendedCourses)
+                    self.saveReturnedCourse(snapshot, courses: &self.dailyCourses)
                 })
             }
     }
     
     func fetchSessions(){
         FirebaseManager.shared.firestore
-            .collection("short_sessions")
+            .collection(FBConstants.SHORT_SESSIONS)
             .getDocuments {[weak self] (documentSnapshot, error) in
                 guard let self = self else {return}
                 self.handleError(error, title: "Failed to fetch Sessions")
