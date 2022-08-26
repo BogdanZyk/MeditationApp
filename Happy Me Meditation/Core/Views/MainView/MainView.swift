@@ -11,33 +11,49 @@ struct MainView: View {
     @StateObject var audioManager = AudioManager()
     @StateObject var mainVM = MainViewModel()
     @StateObject var userManager = UserManagerViewModel()
-    @EnvironmentObject var loginVM: LoginViewModel
-    init(){
     
+    @EnvironmentObject var loginVM: LoginViewModel
+    
+
+    init(){
         UITabBar.appearance().isHidden = true
     }
 
     var body: some View {
-        NavigationView {
-            ZStack(alignment: .bottom) {
-                TabView(selection: $mainVM.currentTab) {
-                    HomeView()
-                        .tag(Tab.home)
-                        .environmentObject(audioManager)
+        ZStack(alignment: .bottom) {
+            TabView(selection: $mainVM.currentTab) {
+                NavigationView{
+                    ZStack(alignment: .bottom) {
+                        HomeView()
+                            .environmentObject(audioManager)
+                        .navigationBarHidden(true)
+                        tabBar
+                    }
+                }.tag(Tab.home)
+                
+                VStack {
                     Text("favourites")
-                        .tag(Tab.favourites)
-                    Text("saved")
-                        .tag(Tab.saved)
-                    Text("music")
-                        .tag(Tab.music)
-                    Text("calendar")
-                        .tag(Tab.calendar)
-
+                    
+                        .navigationBarHidden(true)
                 }
+                .tag(Tab.favourites)
+                Text("saved")
+                    .tag(Tab.saved)
+                    .navigationBarHidden(true)
+                Text("music")
+                    .tag(Tab.music)
+                    .navigationBarHidden(true)
+                Text("calendar")
+                    .tag(Tab.calendar)
+                    .navigationBarHidden(true)
+            }
+            .environmentObject(mainVM)
+ 
+           
+           
+            if mainVM.currentTab != .home{
                 tabBar
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarHidden(true)
         }
     }
 }
@@ -53,10 +69,13 @@ extension MainView{
     
     private var tabBar: some View{
         VStack(spacing: 0) {
+            if audioManager.isSetAudio{
+                playerBarView
+            }
             Rectangle()
                 .fill(Color.mintGreen)
                 .frame(height: 35)
-                .clipShape(CustomCorners(corners: [.topLeft, .topRight], radius: 20))
+                .clipShape(CustomCorners(corners: [.topLeft, .topRight], radius: audioManager.isSetAudio ? 0 : 20))
             HStack{
                 ForEach(Tab.allCases, id: \.self){tab in
                     Spacer()
@@ -75,6 +94,38 @@ extension MainView{
             }
             .padding(.top, -10)
         }
+       
+    }
+    
+    private var playerBarView: some View{
+        ZStack(alignment: .top) {
+            Color.backgroung.opacity(0.6)
+            ProgressView(value: audioManager.currentTime, total: audioManager.duration ?? 0)
+                .progressViewStyle(LinerProgressStyle())
+                .frame(height: 3)
+            HStack(spacing: 20) {
+                Text(audioManager.audio?.title ?? "No name")
+                    .lineLimit(1)
+                    .font(.headline)
+                Spacer()
+                Text(DateComponentsFormatter.positional.string(from: ((audioManager.duration ?? 0) - audioManager.currentTime)) ?? "0:00")
+                    .font(.subheadline)
+                
+                Button {
+                    audioManager.playOrPause()
+                } label: {
+                    Image(systemName: audioManager.isPlaying ? "pause.fill" : "play.fill")
+                        .font(.title2)
+                        .padding(.vertical, 10)
+                }
+            }
+            .padding(.vertical, 5)
+            .padding(.horizontal, 25)
+        }
+        .foregroundColor(.white)
+        .hCenter()
+        .frame(height: 60)
+        .background(Material.ultraThinMaterial)
     }
 }
 
@@ -92,17 +143,22 @@ struct CustomCorners: Shape {
 
 
 
-//HStack{
-//    Text(userManager.currentUser?.userName ?? "")
-//    if let url = URL(string: userManager.currentUser?.profileImageUrl ?? "") {
-//        WebImageView(imageUrl: url)
-//            .frame(width: 80, height: 80)
-//    }
-//
-//}
-//Text("MainView")
-//Button {
-//    loginVM.logOut()
-//} label: {
-//    Text("logOut")
-//}
+
+
+
+struct LinerProgressStyle: ProgressViewStyle {
+    
+    func makeBody(configuration: Configuration) -> some View {
+        let fractionCompleted = configuration.fractionCompleted ?? 0
+        
+        return  ZStack(alignment: .topLeading) {
+            GeometryReader { geo in
+                Rectangle()
+                    .frame(maxWidth: geo.size.width * CGFloat(fractionCompleted))
+                    .foregroundColor(Color.accentOrange)
+                    .animation(.linear, value: fractionCompleted)
+            }
+        }
+    }
+}
+

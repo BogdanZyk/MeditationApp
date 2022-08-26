@@ -20,7 +20,6 @@ final class AudioManager: ObservableObject{
     @Published var currentTime: Double = .zero
     @Published var observedTime: Double = .zero
     @Published var duration: Double?
-    @Published var isEndAudio: Bool = false
     private var subscriptions = Set<AnyCancellable>()
     
     
@@ -35,6 +34,15 @@ final class AudioManager: ObservableObject{
     
     init(){
         startSubscriptions()
+    }
+    
+    public var isEndAudio: Bool{
+        currentTime == duration
+    }
+    
+    
+    public var isSetAudio: Bool{
+        audio != nil && !isEndAudio
     }
     
     

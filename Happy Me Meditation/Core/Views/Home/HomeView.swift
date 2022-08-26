@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var mainVM: MainViewModel
     @EnvironmentObject var audioManager: AudioManager
     @StateObject private var homeVM = HomeViewModel()
     @State private var showCourseDetails: Bool = false
-    @State private var showShortSessions: Bool = false
     var body: some View {
         VStack(alignment: .leading, spacing: 0){
             ScrollView(.vertical, showsIndicators: false){
@@ -33,7 +33,7 @@ struct HomeView: View {
                     EmptyView()
                 }
                 
-                NavigationLink(isActive: $showShortSessions) {
+                NavigationLink(isActive: $mainVM.showPlayerView) {
                     PlayerView(audio: homeVM.selectedSession?.audio)
                         .environmentObject(audioManager)
                 } label: {
@@ -54,6 +54,7 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
             .environmentObject(AudioManager())
+            .environmentObject(MainViewModel())
     }
 }
 
@@ -165,7 +166,7 @@ extension HomeView {
                        ForEach(sessions, id: \.id) { session in
                            Button {
                                homeVM.selectedSession = session
-                               showShortSessions.toggle()
+                               mainVM.showPlayerView.toggle()
                            } label: {
                                SessionRowViewComponent(session: session)
                            }

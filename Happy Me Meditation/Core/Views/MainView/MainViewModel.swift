@@ -12,6 +12,8 @@ final class MainViewModel: ObservableObject{
     
     
     @Published var currentTab: Tab = .home
+    @Published var showPlayerView: Bool = false
+    @Published var playAnimation: Bool = false
 }
 
 
