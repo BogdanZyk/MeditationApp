@@ -23,12 +23,10 @@ struct MainView: View {
         ZStack(alignment: .bottom) {
             TabView(selection: $mainVM.currentTab) {
                 NavigationView{
-                    ZStack(alignment: .bottom) {
-                        HomeView()
-                            .environmentObject(audioManager)
+                    HomeView()
+                        .environmentObject(audioManager)
                         .navigationBarHidden(true)
-                        tabBar
-                    }
+                    
                 }.tag(Tab.home)
                 
                 VStack {
@@ -47,13 +45,15 @@ struct MainView: View {
                     .tag(Tab.calendar)
                     .navigationBarHidden(true)
             }
+            .environmentObject(userManager)
             .environmentObject(mainVM)
- 
-           
-           
-            if mainVM.currentTab != .home{
-                tabBar
-            }
+            
+            tabBar
+            
+        }
+        .fullScreenCover(isPresented: $audioManager.showPlayerView) {
+            PlayerView(audioManager: audioManager)
+               
         }
     }
 }
@@ -104,7 +104,7 @@ extension MainView{
                 .progressViewStyle(LinerProgressStyle())
                 .frame(height: 3)
             HStack(spacing: 20) {
-                Text(audioManager.audio?.title ?? "No name")
+                Text(audioManager.plaingAudio?.title ?? "No name")
                     .lineLimit(1)
                     .font(.headline)
                 Spacer()
@@ -126,6 +126,9 @@ extension MainView{
         .hCenter()
         .frame(height: 60)
         .background(Material.ultraThinMaterial)
+        .onTapGesture {
+            audioManager.showPlayerView.toggle()
+        }
     }
 }
 

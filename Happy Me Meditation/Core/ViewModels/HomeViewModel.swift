@@ -19,8 +19,6 @@ final class HomeViewModel: ObservableObject{
     @Published var errorMessage: String = ""
     @Published var showAlert: Bool = false
     
-    
-    @Published var selectedSession: Session?
     @Published var selectedCourse: Course?
     
     init(){
@@ -40,8 +38,8 @@ final class HomeViewModel: ObservableObject{
 //            addData(course: course)
 //        }
 //    }
-//
-//
+////
+////
 //    func addData(course: Course){
 //        do {
 //            try FirebaseManager.shared.firestore

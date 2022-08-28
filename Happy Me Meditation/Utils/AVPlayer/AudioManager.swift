@@ -14,7 +14,16 @@ final class AudioManager: ObservableObject{
     
     
     var audioPlayer = AVPlayer()
-    var audio: Audio?
+    var audios: [Audio]? = []
+    
+    public var plaingAudio: Audio?{
+        guard  let audios = audios, !audios.isEmpty else {return nil}
+        return audios[selectedAudioIndex]
+    }
+    
+    @Published var showPlayerView: Bool = false
+    
+    @Published var selectedAudioIndex: Int = 0
     @Published var currentRate: Float = 1.0
     @Published var isPlaying: Bool = false
     @Published var currentTime: Double = .zero
@@ -42,14 +51,14 @@ final class AudioManager: ObservableObject{
     
     
     public var isSetAudio: Bool{
-        audio != nil && !isEndAudio
+        plaingAudio != nil && !isEndAudio
     }
     
     
-    func setCurrentItem(){
-        guard let strUrl = audio?.audioURL, let url = URL(string: strUrl) else {return}
+    func setAudioItem(){
+        guard let strUrl = audios?[selectedAudioIndex].audioURL, let url = URL(string: strUrl) else {return}
+       // currentTime = .zero
         let item = AVPlayerItem(url: url)
-        
         do{
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
@@ -68,7 +77,7 @@ final class AudioManager: ObservableObject{
     public func playOrPause(){
         
         if isEndAudio{
-            setCurrentItem()
+            setAudioItem()
         }
         if isPlaying{
             audioPlayer.pause()
@@ -77,6 +86,27 @@ final class AudioManager: ObservableObject{
         }
     }
     
+    
+    public func playNextAudio(){
+        guard let audios = audios else {return}
+        audioPlayer.pause()
+        if selectedAudioIndex == audios.count - 1{
+            selectedAudioIndex = 0
+            setAudioItem()
+            audioPlayer.play()
+        }else{
+            selectedAudioIndex += 1
+            setAudioItem()
+            audioPlayer.play()
+        }
+    }
+    
+    public func playForwardAudio(){
+        audioPlayer.pause()
+        selectedAudioIndex -= 1
+        setAudioItem()
+        audioPlayer.play()
+    }
     
     public func setBackwardSeconds(_ type: TimeSwitch){
         guard let duration = duration else {return}
@@ -105,6 +135,8 @@ final class AudioManager: ObservableObject{
             }
         }
     }
+    
+
     
     
     private func startSubscriptions(){
@@ -137,6 +169,13 @@ final class AudioManager: ObservableObject{
                     self.scrubState = .reset
                     self.currentTime = seekTime
             }
+            
+            if self.currentTime.rounded(.up) == self.duration?.rounded(.up){
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                    print("next now")
+                    self.playNextAudio()
+                }
+            }
         }
     }
 }
@@ -160,4 +199,3 @@ enum TimeSwitch{
         }
     }
 }
-

@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct PlayerView: View {
-    @EnvironmentObject var audioManager: AudioManager
-    @Environment(\.dismiss) var dismiss
-    var audio: Audio?
+    @ObservedObject var audioManager: AudioManager
     var body: some View {
-        ZStack{
+        ZStack(alignment: .top){
             bgImage
             VStack(alignment: .leading, spacing: 0){
-                navBarView
+             CustomNavigationBar()
                 Spacer()
                 soundPlayerView
                 
@@ -24,9 +22,8 @@ struct PlayerView: View {
             .padding(.horizontal)
         }
         .onAppear{
-            if let audio = audio, !audioManager.isPlaying {
-                audioManager.audio = audio
-                audioManager.setCurrentItem()
+            if !audioManager.isPlaying{
+                audioManager.setAudioItem()
                 audioManager.audioPlayer.play()
             }
         }
@@ -37,8 +34,7 @@ struct PlayerView: View {
 
 struct PlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerView()
-            .environmentObject(AudioManager())
+        PlayerView(audioManager: AudioManager())
     }
 }
 
@@ -51,43 +47,6 @@ extension PlayerView{
             .ignoresSafeArea()
             .scaleEffect(1.1)
             .blur(radius: 5)
-    }
-    
-    private var navBarView: some View{
-        HStack(spacing: 20){
-            Button {
-                dismiss()
-            } label: {
-                iconView("leftArrow", size: CGSize(width: 20, height: 20))
-            }
-            Spacer()
-            Button {
-                
-            } label: {
-                iconView("Favourites")
-            }
-            Button {
-                
-            } label: {
-                iconView("Saved")
-            }
-            Button {
-                
-            } label: {
-                iconView("share")
-            }
-            
-        }
-        .foregroundColor(.white)
-        .padding(.horizontal)
-    }
-    
-    private func iconView(_ icon: String, size: CGSize = CGSize(width: 25, height: 25)) -> some View{
-        Image(icon)
-            .renderingMode(.template)
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: size.width, height: size.height)
     }
 }
 
@@ -104,7 +63,7 @@ extension PlayerView{
     
     private var soundInfoView: some View{
         Group{
-            if let title = audio?.title{
+            if let title = audioManager.plaingAudio?.title{
                 VStack(spacing: 20) {
                     ZStack{
                         Color.white.opacity(0.15)
@@ -117,7 +76,7 @@ extension PlayerView{
                     Text(title)
                         .font(.title)
                         .fontWeight(.bold)
-                    if let description = audio?.description{
+                    if let description = audioManager.plaingAudio?.description{
                         Text(description)
                             .font(.urbRegular(size: 18))
                             .multilineTextAlignment(.center)
@@ -158,13 +117,17 @@ extension PlayerView{
                 audioManager.setBackwardSeconds(TimeSwitch.backward)
             })
             Spacer()
-            PlaybackControlButton(action: {})
+            PlaybackControlButton(isDisabled: audioManager.selectedAudioIndex == 0, action: {
+                audioManager.playForwardAudio()
+            })
             Spacer()
             PlayButton(isPlay: !audioManager.isPlaying, action: {
                 audioManager.playOrPause()
             })
             Spacer()
-            PlaybackControlButton(isNext: true, action: {})
+            PlaybackControlButton(isNext: true, action: {
+                audioManager.playNextAudio()
+            })
             Spacer()
             BackwardButton( action: {
                 audioManager.setBackwardSeconds(TimeSwitch.forward)
@@ -173,6 +136,7 @@ extension PlayerView{
         .padding(.horizontal)
     }
 }
+
 
 
 

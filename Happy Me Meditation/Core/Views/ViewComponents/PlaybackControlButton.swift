@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PlaybackControlButton: View {
+    var isDisabled: Bool = false
     var isNext: Bool = false
     var action: () -> Void
     var body: some View {
@@ -20,6 +21,8 @@ struct PlaybackControlButton: View {
                 .foregroundColor(.white)
                 .rotationEffect(Angle.degrees(isNext ? 180 : 0))
         }
+        .opacity(isDisabled ? 0.3 : 1)
+        .disabled(isDisabled)
     }
 }
 
@@ -29,7 +32,7 @@ struct PlaybackControlButton_Previews: PreviewProvider {
             Color.black
             HStack {
                 BackwardButton( action: {})
-                PlaybackControlButton(action: {})
+                PlaybackControlButton(isDisabled: true, action: {})
                 PlayButton(isPlay: false, action: {})
                 PlaybackControlButton(isNext: true, action: {})
                 BackwardButton(isForward: false, action: {})

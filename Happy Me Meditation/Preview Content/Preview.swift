@@ -85,9 +85,9 @@ final class MockData{
         
         //titles.shuffle()
         
-        audiosData.forEach { title in
+        audiosData.forEach { data in
             let duration: Int = (60...180).randomElement() ?? 60
-            let audio = Audio(title: title.key, description: "How to keep focus on your needs during the day in such a hectic world", duration: duration, audioURL: "https://firebasestorage.googleapis.com/v0/b/happy-me-meditation.appspot.com/o/audio%2Fmixkit-just-chill-16.mp3?alt=media&token=5eee7bde-6d2e-4dc8-b199-430a1999df37")
+            let audio = Audio(title: data.key, description: "How to keep focus on your needs during the day in such a hectic world", duration: duration, audioURL: data.value)
             audios.append(audio)
         }
         return audios

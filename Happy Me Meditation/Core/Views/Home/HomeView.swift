@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var userManager: UserManagerViewModel
     @EnvironmentObject var mainVM: MainViewModel
     @EnvironmentObject var audioManager: AudioManager
     @StateObject private var homeVM = HomeViewModel()
@@ -25,23 +26,16 @@ struct HomeView: View {
                     newlyAddedSection
                 }
                 .padding(.horizontal)
-                .padding(.bottom, 80)
+                .padding(.bottom, 120)
                 
                 NavigationLink(isActive: $showCourseDetails) {
-                    
-                } label: {
-                    EmptyView()
-                }
-                
-                NavigationLink(isActive: $mainVM.showPlayerView) {
-                    PlayerView(audio: homeVM.selectedSession?.audio)
+                    CourseDetailsView(course: homeVM.selectedCourse)
                         .environmentObject(audioManager)
                 } label: {
                     EmptyView()
                 }
             }
         }
-   
         .foregroundColor(.white)
         .allFrame()
         .background{
@@ -55,35 +49,25 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
             .environmentObject(AudioManager())
             .environmentObject(MainViewModel())
+            .environmentObject(UserManagerViewModel())
     }
 }
 
 
 extension HomeView{
     private var backgroungView: some View{
-        ZStack(alignment: .top){
-            Color.backgroung.ignoresSafeArea()
-                Image("homeBgImage")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                Image("bgIcon")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .offset(y: 250)
-        }.ignoresSafeArea()
+        MainBgView()
     }
 }
 
 extension HomeView{
     private var headerView: some View{
         HStack{
-            Text("Good Morning,\nHermione")
+            Text("Good Morning\n\(userManager.currentUser?.userName ?? "")")
                 .font(.title)
                 .fontWeight(.bold)
             Spacer()
-            Circle()
-                .fill(Color.mintGreen)
-                .frame(width: 76, height: 76)
+            UserAvatarViewComponent(pathImage: userManager.currentUser?.profileImageUrl, size: CGSize(width: 76, height: 76))
         }
         .hLeading()
     }
@@ -141,6 +125,7 @@ extension HomeView{
             
             if let dilyCourse = homeVM.dailyCourses?.first{
                 Button {
+                    homeVM.selectedCourse = dilyCourse
                     showCourseDetails.toggle()
                 } label: {
                     CourseCardViewComponent(course: dilyCourse)
@@ -163,12 +148,13 @@ extension HomeView {
            ScrollView(.horizontal, showsIndicators: false) {
                LazyHGrid(rows: rows, alignment: .center, spacing: 20) {
                    if let sessions = homeVM.shortSessions, !sessions.isEmpty{
-                       ForEach(sessions, id: \.id) { session in
+                       ForEach(sessions.indices, id: \.self) { index in
                            Button {
-                               homeVM.selectedSession = session
-                               mainVM.showPlayerView.toggle()
+                               audioManager.audios = sessions.compactMap({$0.audio})
+                               audioManager.selectedAudioIndex = index
+                               audioManager.showPlayerView.toggle()
                            } label: {
-                               SessionRowViewComponent(session: session)
+                               SessionRowViewComponent(session: sessions[index])
                            }
                        }
                    }else{
@@ -197,6 +183,7 @@ extension HomeView {
                     if let courses = homeVM.recomendedCourses, !courses.isEmpty{
                         ForEach(courses, id: \.id) { course in
                             Button {
+                                homeVM.selectedCourse = course
                                 showCourseDetails.toggle()
                             } label: {
                                 CourseCardViewComponent(course: course)

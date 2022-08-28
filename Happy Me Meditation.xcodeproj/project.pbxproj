@@ -53,6 +53,9 @@
 		5AA2786828B141FA00BDAACD /* SessionRowViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA2786728B141FA00BDAACD /* SessionRowViewComponent.swift */; };
 		5AA2786B28B1462A00BDAACD /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA2786A28B1462A00BDAACD /* AudioManager.swift */; };
 		5AA2786E28B1482300BDAACD /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA2786D28B1482300BDAACD /* PlayerView.swift */; };
+		5AB2C91328BB8E690066E5EA /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2C91228BB8E690066E5EA /* CustomNavigationBar.swift */; };
+		5AB2C91628BB8F560066E5EA /* CourseDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2C91528BB8F560066E5EA /* CourseDetailsView.swift */; };
+		5AB2C91828BB8F910066E5EA /* MainBgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2C91728BB8F900066E5EA /* MainBgView.swift */; };
 		5AD62C2B28A8532D0076FF1A /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD62C2A28A8532D0076FF1A /* MainViewModel.swift */; };
 		5AD62C2E28A85DD70076FF1A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD62C2D28A85DD70076FF1A /* HomeView.swift */; };
 /* End PBXBuildFile section */
@@ -100,6 +103,9 @@
 		5AA2786728B141FA00BDAACD /* SessionRowViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRowViewComponent.swift; sourceTree = "<group>"; };
 		5AA2786A28B1462A00BDAACD /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		5AA2786D28B1482300BDAACD /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		5AB2C91228BB8E690066E5EA /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		5AB2C91528BB8F560066E5EA /* CourseDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsView.swift; sourceTree = "<group>"; };
+		5AB2C91728BB8F900066E5EA /* MainBgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBgView.swift; sourceTree = "<group>"; };
 		5AD62C2A28A8532D0076FF1A /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		5AD62C2D28A85DD70076FF1A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -211,6 +217,7 @@
 		5A1E87532884A092009CB2FC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5AB2C91428BB8F420066E5EA /* CourseDetailsView */,
 				5AA2786C28B1481600BDAACD /* PlayerView */,
 				5AD62C2C28A85DCB0076FF1A /* Home */,
 				5A1E875B2884A163009CB2FC /* ViewComponents */,
@@ -276,6 +283,7 @@
 		5A1E875B2884A163009CB2FC /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				5AB2C91128BB8E4C0066E5EA /* NavBar */,
 				5A1E87892884E4D6009CB2FC /* TextFields */,
 				5A1E877F2884CF66009CB2FC /* Buttons */,
 				5A1E87602884A36C009CB2FC /* ProgressLoader.swift */,
@@ -283,6 +291,7 @@
 				5A1E87642884A3D8009CB2FC /* CustomLazyImage.swift */,
 				5A09018028A4663B00C971B7 /* PhotoPicker.swift */,
 				5A804FA928B259F400E44681 /* PlaybackControlButton.swift */,
+				5AB2C91728BB8F900066E5EA /* MainBgView.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -351,6 +360,22 @@
 				5AA2786D28B1482300BDAACD /* PlayerView.swift */,
 			);
 			path = PlayerView;
+			sourceTree = "<group>";
+		};
+		5AB2C91128BB8E4C0066E5EA /* NavBar */ = {
+			isa = PBXGroup;
+			children = (
+				5AB2C91228BB8E690066E5EA /* CustomNavigationBar.swift */,
+			);
+			path = NavBar;
+			sourceTree = "<group>";
+		};
+		5AB2C91428BB8F420066E5EA /* CourseDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				5AB2C91528BB8F560066E5EA /* CourseDetailsView.swift */,
+			);
+			path = CourseDetailsView;
 			sourceTree = "<group>";
 		};
 		5AD62C2C28A85DCB0076FF1A /* Home */ = {
@@ -457,6 +482,7 @@
 				5A804FAC28B2763F00E44681 /* Date.swift in Sources */,
 				5A1E878B2884E4E9009CB2FC /* CustomTextField.swift in Sources */,
 				5A1E87652884A3D8009CB2FC /* CustomLazyImage.swift in Sources */,
+				5AB2C91628BB8F560066E5EA /* CourseDetailsView.swift in Sources */,
 				5AA2786B28B1462A00BDAACD /* AudioManager.swift in Sources */,
 				5A02711228A932420063F007 /* Course.swift in Sources */,
 				5A1E87882884E260009CB2FC /* MainView.swift in Sources */,
@@ -474,6 +500,7 @@
 				5AA2786628B13F9D00BDAACD /* Session.swift in Sources */,
 				5A1E873828849DBE009CB2FC /* Happy_Me_MeditationApp.swift in Sources */,
 				5A88D0F128B6D5A200356064 /* FBConstants.swift in Sources */,
+				5AB2C91828BB8F910066E5EA /* MainBgView.swift in Sources */,
 				5A1E876F2884C37C009CB2FC /* LoginView.swift in Sources */,
 				5A1E878D288599F9009CB2FC /* UIApplication.swift in Sources */,
 				5A02711628A93A0A0063F007 /* Preview.swift in Sources */,
@@ -481,6 +508,7 @@
 				5A1E876C2884A4DC009CB2FC /* LoginViewModel.swift in Sources */,
 				5A09018628A4737D00C971B7 /* UserManagerViewModel.swift in Sources */,
 				5A1E87632884A395009CB2FC /* UserAvatarViewComponent.swift in Sources */,
+				5AB2C91328BB8E690066E5EA /* CustomNavigationBar.swift in Sources */,
 				5A1E87852884E051009CB2FC /* RootOnboardingView.swift in Sources */,
 				5A1E877C2884CD58009CB2FC /* OnboardingView.swift in Sources */,
 				5A1E87832884D685009CB2FC /* OnboardConstants.swift in Sources */,
