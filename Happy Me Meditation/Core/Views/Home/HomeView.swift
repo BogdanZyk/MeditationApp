@@ -26,7 +26,7 @@ struct HomeView: View {
                     newlyAddedSection
                 }
                 .padding(.horizontal)
-                .padding(.bottom, 120)
+                .padding(.bottom, audioManager.isSetAudio ? 130 : 90)
                 
                 NavigationLink(isActive: $showCourseDetails) {
                     CourseDetailsView(course: homeVM.selectedCourse)

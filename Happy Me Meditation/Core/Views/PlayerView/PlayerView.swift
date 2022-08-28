@@ -13,7 +13,7 @@ struct PlayerView: View {
         ZStack(alignment: .top){
             bgImage
             VStack(alignment: .leading, spacing: 0){
-             CustomNavigationBar()
+                navBar
                 Spacer()
                 soundPlayerView
                 
@@ -47,6 +47,9 @@ extension PlayerView{
             .ignoresSafeArea()
             .scaleEffect(1.1)
             .blur(radius: 5)
+    }
+    private var navBar: some View{
+        CustomNavigationBar().padding(.horizontal, -16)
     }
 }
 
