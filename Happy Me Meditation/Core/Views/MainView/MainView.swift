@@ -29,18 +29,23 @@ struct MainView: View {
                     
                 }.tag(Tab.home)
                 
-                VStack {
-                    Text("favourites")
-                    
+                NavigationView {
+                   FavouriteView()
+                        .environmentObject(audioManager)
                         .navigationBarHidden(true)
                 }
                 .tag(Tab.favourites)
-                Text("saved")
-                    .tag(Tab.saved)
+                
+                SavedCourseView()
                     .navigationBarHidden(true)
+                    .tag(Tab.saved)
+                
+                
                 Text("music")
                     .tag(Tab.music)
                     .navigationBarHidden(true)
+                
+                
                 Text("calendar")
                     .tag(Tab.calendar)
                     .navigationBarHidden(true)

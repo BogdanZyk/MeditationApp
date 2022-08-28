@@ -79,9 +79,10 @@ extension PlayerView{
                     if let description = audioManager.plaingAudio?.description{
                         Text(description)
                             .font(.urbRegular(size: 18))
-                            .multilineTextAlignment(.center)
+                           
                     }
                 }
+                .multilineTextAlignment(.center)
                 .foregroundColor(.white)
             }
         }

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CourseCardViewComponent: View {
     var course: Course?
-    
+    var isFullSize: Bool = false
     private var isDailyCourse: Bool{
         course?.isDaily ?? false
     }
@@ -23,8 +23,8 @@ struct CourseCardViewComponent: View {
             image
             textContentSection
         }
-        .frame(width:  isDailyCourse  ? (getRect().width - 32)  : (getRect().width / 1.2))
-        .frame(height: isDailyCourse ? 133 : 160)
+        .frame(width:  (isFullSize || isDailyCourse) ? (getRect().width - 32)  : (getRect().width / 1.2))
+        .frame(height: (isFullSize || isDailyCourse) ? 133 : 160)
         .cornerRadius(20)
     }
 }
@@ -75,12 +75,14 @@ extension CourseCardViewComponent{
                 }else{
                     Text("Duration: \(course?.courseDuration ?? 0) days | ~ \((course?.duration ?? 0).secondsToMin())")
                         .padding(.top, 10)
+                        
                 }
             }
             .font(.urbMedium(size: 12))
             .foregroundColor(.fontSecondary.opacity(0.6))
             
         }
+        .padding(.bottom, isFullSize ? 20 : 0)
         .padding(.top, 20)
         .padding(.leading, 16)
         .foregroundColor(.white)

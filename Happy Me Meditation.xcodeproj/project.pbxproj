@@ -57,6 +57,9 @@
 		5AB2C91628BB8F560066E5EA /* CourseDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2C91528BB8F560066E5EA /* CourseDetailsView.swift */; };
 		5AB2C91828BB8F910066E5EA /* MainBgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2C91728BB8F900066E5EA /* MainBgView.swift */; };
 		5AB2C91A28BBCA7B0066E5EA /* RessentCourseRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2C91928BBCA7B0066E5EA /* RessentCourseRowView.swift */; };
+		5AB2C91D28BBE0690066E5EA /* FavouriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2C91C28BBE0690066E5EA /* FavouriteView.swift */; };
+		5AB2C91F28BBE7190066E5EA /* FavouriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2C91E28BBE7190066E5EA /* FavouriteViewModel.swift */; };
+		5AB2C92228BBED780066E5EA /* SavedCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2C92128BBED780066E5EA /* SavedCourseView.swift */; };
 		5AD62C2B28A8532D0076FF1A /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD62C2A28A8532D0076FF1A /* MainViewModel.swift */; };
 		5AD62C2E28A85DD70076FF1A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD62C2D28A85DD70076FF1A /* HomeView.swift */; };
 /* End PBXBuildFile section */
@@ -108,6 +111,9 @@
 		5AB2C91528BB8F560066E5EA /* CourseDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsView.swift; sourceTree = "<group>"; };
 		5AB2C91728BB8F900066E5EA /* MainBgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBgView.swift; sourceTree = "<group>"; };
 		5AB2C91928BBCA7B0066E5EA /* RessentCourseRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RessentCourseRowView.swift; sourceTree = "<group>"; };
+		5AB2C91C28BBE0690066E5EA /* FavouriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteView.swift; sourceTree = "<group>"; };
+		5AB2C91E28BBE7190066E5EA /* FavouriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewModel.swift; sourceTree = "<group>"; };
+		5AB2C92128BBED780066E5EA /* SavedCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCourseView.swift; sourceTree = "<group>"; };
 		5AD62C2A28A8532D0076FF1A /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		5AD62C2D28A85DD70076FF1A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -220,6 +226,8 @@
 		5A1E87532884A092009CB2FC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5AB2C92028BBED5F0066E5EA /* SavedCourseView */,
+				5AB2C91B28BBE0450066E5EA /* FavouriteView */,
 				5AB2C91428BB8F420066E5EA /* CourseDetailsView */,
 				5AA2786C28B1481600BDAACD /* PlayerView */,
 				5AD62C2C28A85DCB0076FF1A /* Home */,
@@ -238,6 +246,7 @@
 				5A1E876B2884A4DC009CB2FC /* LoginViewModel.swift */,
 				5A09018528A4737D00C971B7 /* UserManagerViewModel.swift */,
 				5A02711328A939580063F007 /* HomeViewModel.swift */,
+				5AB2C91E28BBE7190066E5EA /* FavouriteViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -381,6 +390,22 @@
 			path = CourseDetailsView;
 			sourceTree = "<group>";
 		};
+		5AB2C91B28BBE0450066E5EA /* FavouriteView */ = {
+			isa = PBXGroup;
+			children = (
+				5AB2C91C28BBE0690066E5EA /* FavouriteView.swift */,
+			);
+			path = FavouriteView;
+			sourceTree = "<group>";
+		};
+		5AB2C92028BBED5F0066E5EA /* SavedCourseView */ = {
+			isa = PBXGroup;
+			children = (
+				5AB2C92128BBED780066E5EA /* SavedCourseView.swift */,
+			);
+			path = SavedCourseView;
+			sourceTree = "<group>";
+		};
 		5AD62C2C28A85DCB0076FF1A /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,8 +523,10 @@
 				5A804FAA28B259F400E44681 /* PlaybackControlButton.swift in Sources */,
 				5A02711428A939580063F007 /* HomeViewModel.swift in Sources */,
 				5A09018128A4663B00C971B7 /* PhotoPicker.swift in Sources */,
+				5AB2C92228BBED780066E5EA /* SavedCourseView.swift in Sources */,
 				5AD62C2E28A85DD70076FF1A /* HomeView.swift in Sources */,
 				5A1E875F2884A2DD009CB2FC /* User.swift in Sources */,
+				5AB2C91F28BBE7190066E5EA /* FavouriteViewModel.swift in Sources */,
 				5AA2786E28B1482300BDAACD /* PlayerView.swift in Sources */,
 				5AA2786628B13F9D00BDAACD /* Session.swift in Sources */,
 				5A1E873828849DBE009CB2FC /* Happy_Me_MeditationApp.swift in Sources */,
@@ -515,6 +542,7 @@
 				5AB2C91328BB8E690066E5EA /* CustomNavigationBar.swift in Sources */,
 				5A1E87852884E051009CB2FC /* RootOnboardingView.swift in Sources */,
 				5A1E877C2884CD58009CB2FC /* OnboardingView.swift in Sources */,
+				5AB2C91D28BBE0690066E5EA /* FavouriteView.swift in Sources */,
 				5A1E87832884D685009CB2FC /* OnboardConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,7 +11,7 @@ import Firebase
 final class HomeViewModel: ObservableObject{
     
     
-    let course = MockData.course
+
     
     @Published var shortSessions: [Session]? = []
     @Published var newCourses: [Course]? = []

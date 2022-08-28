@@ -9,13 +9,17 @@ import SwiftUI
 
 struct SessionRowViewComponent: View {
     var session: Session?
+    var isFullWidth: Bool = false
+    var width: CGFloat{
+        isFullWidth ? getRect().width - 32 : getRect().width / 1.2
+    }
     var body: some View {
         ZStack(alignment: .leading) {
             imageSection
             titleSection
         }
         .cornerRadius(20)
-        .frame(width: getRect().width / 1.2, height: 80)
+        .frame(width: width, height: 80)
     }
 }
 
