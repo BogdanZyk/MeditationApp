@@ -10,6 +10,9 @@ import FirebaseFirestore
 
 final class MockData{
     
+    
+    static let ressentCourse = Course(title: "Self-trust & exploration", subtitle: "Explore your feelings and thoughts to live a life you want", duration: 360, courseDuration: 12, courseImageUrl: "https://firebasestorage.googleapis.com/v0/b/happy-me-meditation.appspot.com/o/course_Images%2Fkelly-sikkema-uuAItepQWMw-unsplash%201.jpg?alt=media&token=0df837cb-d76f-4012-88c9-2bdc5d734e22", isDaily: false, isNew: false, timestamp: Timestamp.init(date: .now), audios: audios)
+    
     static let course = Course(title: "Take a break", subtitle: "Stop feeling guilty for taking rests and get stronger", duration: 360, courseDuration: 12, courseImageUrl: "https://firebasestorage.googleapis.com/v0/b/happy-me-meditation.appspot.com/o/thom-masat-fOKaK7EjydM-unsplash%201.jpg?alt=media&token=abe37ce2-2913-4ba1-8894-4e7bb63de747", isDaily: false, isNew: true, timestamp: Timestamp.init(date: .now), audios: audios)
     
     static let dailyCourse = Course(title: "Meditation Process", subtitle: "A new lesson on a current topic every day", duration: 360, courseDuration: 12, courseImageUrl: "https://firebasestorage.googleapis.com/v0/b/happy-me-meditation.appspot.com/o/course_Images%2Fmyles-tan-RFgO9B_OR4g-unsplash%201.jpg?alt=media&token=01900571-64b4-46dc-9892-d80e3f905d05", isDaily: true, isNew: false, audios: audios)

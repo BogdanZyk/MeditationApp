@@ -111,8 +111,12 @@ extension HomeView {
     private var recentSessionsSection: some View{
         VStack(alignment: .leading, spacing: 20) {
             sectionHeader("Recent Sessions", subTitle: "You have uncompleted course. Please, get back to sessions when you’re ready")
-            RoundedRectangle(cornerRadius: 20)
-                .frame(height: 173)
+            Button {
+                homeVM.selectedCourse = MockData.ressentCourse
+                showCourseDetails.toggle()
+            } label: {
+                RessentCourseRowView(course: MockData.ressentCourse)
+            }
         }
     }
 }

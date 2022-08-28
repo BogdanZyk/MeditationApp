@@ -151,15 +151,25 @@ struct CustomCorners: Shape {
 
 struct LinerProgressStyle: ProgressViewStyle {
     
+    var line1Color: Color = .clear
+    var line2Color: Color = .accentOrange
+    
     func makeBody(configuration: Configuration) -> some View {
         let fractionCompleted = configuration.fractionCompleted ?? 0
         
         return  ZStack(alignment: .topLeading) {
             GeometryReader { geo in
-                Rectangle()
-                    .frame(maxWidth: geo.size.width * CGFloat(fractionCompleted))
-                    .foregroundColor(Color.accentOrange)
-                    .animation(.linear, value: fractionCompleted)
+                
+                ZStack(alignment: .leading){
+                    Rectangle()
+                        .frame(width: geo.size.width, height: geo.size.height)
+                        .foregroundColor(line1Color)
+                    
+                    Rectangle()
+                        .frame(maxWidth: geo.size.width * CGFloat(fractionCompleted))
+                        .foregroundColor(line2Color)
+                        .animation(.linear, value: fractionCompleted)
+                }
             }
         }
     }
