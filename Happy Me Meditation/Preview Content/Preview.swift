@@ -18,6 +18,13 @@ final class MockData{
     static let dailyCourse = Course(title: "Meditation Process", subtitle: "A new lesson on a current topic every day", duration: 360, courseDuration: 12, courseImageUrl: "https://firebasestorage.googleapis.com/v0/b/happy-me-meditation.appspot.com/o/course_Images%2Fmyles-tan-RFgO9B_OR4g-unsplash%201.jpg?alt=media&token=01900571-64b4-46dc-9892-d80e3f905d05", isDaily: true, isNew: false, audios: audios)
     
     
+    static let newCourse: [Course] = [
+    
+        Course(title: "Healthy communication", subtitle: "Set healthy relations and learn to cope with your feelings", duration: 360, courseDuration: 12, courseImageUrl: "https://firebasestorage.googleapis.com/v0/b/happy-me-meditation.appspot.com/o/course_Images%2Fallef-vinicius-GMcC5_u0yzM-unsplash.jpg?alt=media&token=7d2f7507-71ec-452e-a4e3-6e807ba269b4", isDaily: false, isNew: true, audios: audios),
+        Course(title: "Acceptance", subtitle: "Overcome your fears to get where you want", duration: 260, courseDuration: 5, courseImageUrl: "https://firebasestorage.googleapis.com/v0/b/happy-me-meditation.appspot.com/o/course_Images%2Fbenjamin-davies-JrZ1yE1PjQ0-unsplash.jpg?alt=media&token=884233ac-5484-4609-ae3d-3222dec5d1f7", isDaily: false, isNew: true, audios: audios)
+    
+    ]
+    
     static let recomendedCourse: [Course] = [
     
         Course(title: "Take a break", subtitle: "Stop feeling guilty for taking rests and get stronger", duration: 360, courseDuration: 12, courseImageUrl: "https://firebasestorage.googleapis.com/v0/b/happy-me-meditation.appspot.com/o/thom-masat-fOKaK7EjydM-unsplash%201.jpg?alt=media&token=abe37ce2-2913-4ba1-8894-4e7bb63de747", isDaily: false, isNew: false, audios: audios),

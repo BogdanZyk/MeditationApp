@@ -14,6 +14,7 @@ final class HomeViewModel: ObservableObject{
     let course = MockData.course
     
     @Published var shortSessions: [Session]? = []
+    @Published var newCourses: [Course]? = []
     @Published var recomendedCourses: [Course]? = []
     @Published var dailyCourses: [Course]? = []
     @Published var errorMessage: String = ""
@@ -25,6 +26,7 @@ final class HomeViewModel: ObservableObject{
         fetchSessions()
         fetchDailyCourse()
         fetchRecomendedCourse()
+        fetchNewCourses()
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
 //            self.uploadData()
 //        }
@@ -34,16 +36,16 @@ final class HomeViewModel: ObservableObject{
 
 //    func uploadData(){
 ////        addData(course: MockData.dailyCourse)
-//        MockData.recomendedCourse.forEach { course in
+//        MockData.newCourse.forEach { course in
 //            addData(course: course)
 //        }
 //    }
-////
-////
+//
+//
 //    func addData(course: Course){
 //        do {
 //            try FirebaseManager.shared.firestore
-//                .collection(FBConstants.RECOMENDED_COURSES)
+//                .collection(FBConstants.NEW_COURSES)
 //                .document()
 //                .setData(from: course, completion: { error in
 //                    if let error = error{
@@ -78,9 +80,21 @@ final class HomeViewModel: ObservableObject{
             .collection(FBConstants.DAILY_COURSE)
             .getDocuments {[weak self] (documentSnapshot, error) in
                 guard let self = self else {return}
-                self.handleError(error, title: "Failed to fetch Daily Course")
+                self.handleError(error, title: "Failed to fetch New Course")
                 documentSnapshot?.documents.forEach({ snapshot in
                     self.saveReturnedCourse(snapshot, courses: &self.dailyCourses)
+                })
+            }
+    }
+    
+    func fetchNewCourses() {
+        FirebaseManager.shared.firestore
+            .collection(FBConstants.NEW_COURSES)
+            .getDocuments {[weak self] (documentSnapshot, error) in
+                guard let self = self else {return}
+                self.handleError(error, title: "Failed to fetch Daily Course")
+                documentSnapshot?.documents.forEach({ snapshot in
+                    self.saveReturnedCourse(snapshot, courses: &self.newCourses)
                 })
             }
     }

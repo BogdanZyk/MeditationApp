@@ -10,6 +10,7 @@ import SwiftUI
 struct MainBgView: View {
     var body: some View {
         ZStack(alignment: .top){
+            
             Color.backgroung.ignoresSafeArea()
                 Image("homeBgImage")
                 .resizable()

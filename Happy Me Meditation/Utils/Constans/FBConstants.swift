@@ -16,4 +16,6 @@ final class FBConstants{
     
     static let RECOMENDED_COURSES: String = "recomended_courses"
     
+    static let NEW_COURSES: String = "new_courses"
+    
 }

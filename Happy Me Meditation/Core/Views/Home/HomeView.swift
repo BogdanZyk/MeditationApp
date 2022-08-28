@@ -214,10 +214,22 @@ extension HomeView {
         VStack(alignment: .leading, spacing: 20) {
              sectionHeader("Newly Added", subTitle: "Discover updates and try new meditation courses as they come up")
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 20) {
-                    ForEach(1...4, id: \.self) { _ in
-                        RoundedRectangle(cornerRadius: 20)
-                            .frame(width: 320, height: 160)
+                LazyHStack{
+                    if let courses = homeVM.newCourses, !courses.isEmpty{
+                        ForEach(courses, id: \.id) { course in
+                            Button {
+                                homeVM.selectedCourse = course
+                                showCourseDetails.toggle()
+                            } label: {
+                                CourseCardViewComponent(course: course)
+                            }
+                        }
+                    }else{
+                        ForEach(1...2, id: \.self) { _ in
+                            RoundedRectangle(cornerRadius: 20)
+                                .fill(Color.secondaryGreen)
+                                .frame(width: 320, height: 160)
+                        }
                     }
                 }
                 .padding(.horizontal)

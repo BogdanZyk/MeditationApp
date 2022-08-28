@@ -66,7 +66,7 @@ extension CourseCardViewComponent{
             Text(course?.subtitle ?? "")
                 .font(.urbMedium(size: 12))
                 .multilineTextAlignment(.leading)
-                .frame(maxWidth: 160, alignment: .leading)
+                .frame(maxWidth: 200, alignment: .leading)
             Spacer()
             Group{
                 if isDailyCourse{
