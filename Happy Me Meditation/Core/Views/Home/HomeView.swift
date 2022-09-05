@@ -78,13 +78,22 @@ extension HomeView{
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10){
                     ForEach(MoodType.allCases, id: \.self) { mood in
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 20)
-                                .fill(Color.secondaryGreen)
-                            Text(mood.rawValue)
-                                .font(.largeTitle)
+                        Button {
+                            withAnimation {
+                                homeVM.currentMood = mood
+                            }
+                        } label: {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 20)
+                                    .fill(homeVM.currentMood == mood ? .mintGreen : Color.secondaryGreen)
+                                    
+                                Text(mood.rawValue)
+                                    .font(.largeTitle)
+                            }
+                            .frame(width: 80, height: 80)
                         }
-                        .frame(width: 80, height: 80)
+
+                        
                     }
                 }
                 .padding(.leading)

@@ -12,7 +12,7 @@ final class HomeViewModel: ObservableObject{
     
     
 
-    
+    @Published var currentMood: MoodType? = nil
     @Published var shortSessions: [Session]? = []
     @Published var newCourses: [Course]? = []
     @Published var recomendedCourses: [Course]? = []
