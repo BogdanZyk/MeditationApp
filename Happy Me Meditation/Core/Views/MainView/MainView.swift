@@ -24,32 +24,35 @@ struct MainView: View {
             TabView(selection: $mainVM.currentTab) {
                 NavigationView{
                     HomeView()
-                        .environmentObject(audioManager)
                         .navigationBarHidden(true)
                     
                 }.tag(Tab.home)
                 
                 NavigationView {
                    FavouriteView()
-                        .environmentObject(audioManager)
                         .navigationBarHidden(true)
                 }
                 .tag(Tab.favourites)
                 
+                
+                NavigationView {
                 SavedCourseView()
                     .navigationBarHidden(true)
-                    .tag(Tab.saved)
-                
+                }
+                .tag(Tab.saved)
                 
                 Text("music")
                     .tag(Tab.music)
                     .navigationBarHidden(true)
                 
-                
-                Text("calendar")
-                    .tag(Tab.calendar)
+                NavigationView {
+                CalendarView()
+                    .environmentObject(loginVM)
                     .navigationBarHidden(true)
+                }
+                .tag(Tab.calendar)
             }
+            .environmentObject(audioManager)
             .environmentObject(userManager)
             .environmentObject(mainVM)
             
