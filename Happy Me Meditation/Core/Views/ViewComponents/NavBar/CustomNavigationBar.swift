@@ -36,6 +36,7 @@ struct CustomNavigationBar: View {
         }
         .foregroundColor(.white)
         .padding(.horizontal)
+        .padding(.bottom, 10)
     }
 }
 

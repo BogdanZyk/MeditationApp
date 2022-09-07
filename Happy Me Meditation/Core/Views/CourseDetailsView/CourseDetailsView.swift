@@ -23,7 +23,7 @@ struct CourseDetailsView: View {
                     downloadButton
                 }
                 .padding([.horizontal, .top])
-                .padding(.bottom, 90)
+                .padding(.bottom, audioManager.isSetAudio ? 130 : 90)
             }
         }
         .onAppear{
@@ -151,7 +151,7 @@ extension CourseDetailsView{
             .clipShape(Circle())
             VStack(alignment: .leading, spacing: 5){
                 Text(audio.title ?? "")
-                Text("\((course?.duration ?? 0).secondsToMin())")
+                Text("\((audio.duration ?? 0).secondsToMin())")
                     .foregroundColor(.fontSecondary.opacity(0.6))
                     .font(.urbMedium(size: 14))
             }

@@ -13,6 +13,10 @@
 		5A02711428A939580063F007 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A02711328A939580063F007 /* HomeViewModel.swift */; };
 		5A02711628A93A0A0063F007 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A02711528A93A0A0063F007 /* Preview.swift */; };
 		5A02711928A93EA60063F007 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5A02711828A93EA60063F007 /* NukeUI */; };
+		5A05A6C528C6869D0045DDF3 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05A6C428C6869D0045DDF3 /* CalendarView.swift */; };
+		5A05A6C728C689ED0045DDF3 /* SaveCourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05A6C628C689ED0045DDF3 /* SaveCourseViewModel.swift */; };
+		5A05A6C928C68EE40045DDF3 /* CustomDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05A6C828C68EE40045DDF3 /* CustomDatePickerView.swift */; };
+		5A05A6CB28C6955C0045DDF3 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05A6CA28C6955C0045DDF3 /* DateValue.swift */; };
 		5A09018128A4663B00C971B7 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09018028A4663B00C971B7 /* PhotoPicker.swift */; };
 		5A09018428A46CD900C971B7 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09018328A46CD900C971B7 /* Helpers.swift */; };
 		5A09018628A4737D00C971B7 /* UserManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09018528A4737D00C971B7 /* UserManagerViewModel.swift */; };
@@ -46,6 +50,9 @@
 		5A1E87882884E260009CB2FC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E87872884E260009CB2FC /* MainView.swift */; };
 		5A1E878B2884E4E9009CB2FC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E878A2884E4E9009CB2FC /* CustomTextField.swift */; };
 		5A1E878D288599F9009CB2FC /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E878C288599F8009CB2FC /* UIApplication.swift */; };
+		5A395D0728C9156C00DA2B25 /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A395D0628C9156C00DA2B25 /* ConfettiView.swift */; };
+		5A395D0928C91D6B00DA2B25 /* TwigCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A395D0828C91D6B00DA2B25 /* TwigCarouselView.swift */; };
+		5A395D0B28C933BF00DA2B25 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A395D0A28C933BF00DA2B25 /* LaunchView.swift */; };
 		5A804FAA28B259F400E44681 /* PlaybackControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A804FA928B259F400E44681 /* PlaybackControlButton.swift */; };
 		5A804FAC28B2763F00E44681 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A804FAB28B2763F00E44681 /* Date.swift */; };
 		5A88D0F128B6D5A200356064 /* FBConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88D0F028B6D5A200356064 /* FBConstants.swift */; };
@@ -70,6 +77,10 @@
 		5A02711128A932420063F007 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		5A02711328A939580063F007 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		5A02711528A93A0A0063F007 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
+		5A05A6C428C6869D0045DDF3 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		5A05A6C628C689ED0045DDF3 /* SaveCourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveCourseViewModel.swift; sourceTree = "<group>"; };
+		5A05A6C828C68EE40045DDF3 /* CustomDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePickerView.swift; sourceTree = "<group>"; };
+		5A05A6CA28C6955C0045DDF3 /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
 		5A09018028A4663B00C971B7 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		5A09018328A46CD900C971B7 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		5A09018528A4737D00C971B7 /* UserManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagerViewModel.swift; sourceTree = "<group>"; };
@@ -100,6 +111,9 @@
 		5A1E87872884E260009CB2FC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		5A1E878A2884E4E9009CB2FC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		5A1E878C288599F8009CB2FC /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		5A395D0628C9156C00DA2B25 /* ConfettiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
+		5A395D0828C91D6B00DA2B25 /* TwigCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwigCarouselView.swift; sourceTree = "<group>"; };
+		5A395D0A28C933BF00DA2B25 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		5A804FA928B259F400E44681 /* PlaybackControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackControlButton.swift; sourceTree = "<group>"; };
 		5A804FAB28B2763F00E44681 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		5A88D0F028B6D5A200356064 /* FBConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBConstants.swift; sourceTree = "<group>"; };
@@ -142,6 +156,14 @@
 				5AB2C91928BBCA7B0066E5EA /* RessentCourseRowView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		5A05A6C328C6866B0045DDF3 /* UserCalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				5A05A6C428C6869D0045DDF3 /* CalendarView.swift */,
+			);
+			path = UserCalendarView;
 			sourceTree = "<group>";
 		};
 		5A09018228A46CCC00C971B7 /* Helpers */ = {
@@ -226,6 +248,7 @@
 		5A1E87532884A092009CB2FC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5A05A6C328C6866B0045DDF3 /* UserCalendarView */,
 				5AB2C92028BBED5F0066E5EA /* SavedCourseView */,
 				5AB2C91B28BBE0450066E5EA /* FavouriteView */,
 				5AB2C91428BB8F420066E5EA /* CourseDetailsView */,
@@ -236,6 +259,7 @@
 				5A1E877A2884CD3F009CB2FC /* OnboardView */,
 				5A1E876D2884C363009CB2FC /* Login */,
 				5A1E873928849DBE009CB2FC /* StartView.swift */,
+				5A395D0A28C933BF00DA2B25 /* LaunchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -247,6 +271,7 @@
 				5A09018528A4737D00C971B7 /* UserManagerViewModel.swift */,
 				5A02711328A939580063F007 /* HomeViewModel.swift */,
 				5AB2C91E28BBE7190066E5EA /* FavouriteViewModel.swift */,
+				5A05A6C628C689ED0045DDF3 /* SaveCourseViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -257,6 +282,7 @@
 				5A1E875E2884A2DD009CB2FC /* User.swift */,
 				5A02711128A932420063F007 /* Course.swift */,
 				5AA2786528B13F9D00BDAACD /* Session.swift */,
+				5A05A6CA28C6955C0045DDF3 /* DateValue.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -295,6 +321,7 @@
 		5A1E875B2884A163009CB2FC /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				5A395D0628C9156C00DA2B25 /* ConfettiView.swift */,
 				5AB2C91128BB8E4C0066E5EA /* NavBar */,
 				5A1E87892884E4D6009CB2FC /* TextFields */,
 				5A1E877F2884CF66009CB2FC /* Buttons */,
@@ -304,6 +331,8 @@
 				5A09018028A4663B00C971B7 /* PhotoPicker.swift */,
 				5A804FA928B259F400E44681 /* PlaybackControlButton.swift */,
 				5AB2C91728BB8F900066E5EA /* MainBgView.swift */,
+				5A05A6C828C68EE40045DDF3 /* CustomDatePickerView.swift */,
+				5A395D0828C91D6B00DA2B25 /* TwigCarouselView.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -505,6 +534,7 @@
 				5AA2786828B141FA00BDAACD /* SessionRowViewComponent.swift in Sources */,
 				5A1E87762884CB24009CB2FC /* Fonts.swift in Sources */,
 				5A1E87812884CF77009CB2FC /* CustomButton.swift in Sources */,
+				5A05A6C528C6869D0045DDF3 /* CalendarView.swift in Sources */,
 				5A09018428A46CD900C971B7 /* Helpers.swift in Sources */,
 				5AD62C2B28A8532D0076FF1A /* MainViewModel.swift in Sources */,
 				5A804FAC28B2763F00E44681 /* Date.swift in Sources */,
@@ -520,11 +550,16 @@
 				5A1E87612884A36C009CB2FC /* ProgressLoader.swift in Sources */,
 				5A1E87712884C831009CB2FC /* UserDataService.swift in Sources */,
 				5A1E877E2884CDE6009CB2FC /* Color.swift in Sources */,
+				5A395D0728C9156C00DA2B25 /* ConfettiView.swift in Sources */,
+				5A395D0B28C933BF00DA2B25 /* LaunchView.swift in Sources */,
+				5A05A6CB28C6955C0045DDF3 /* DateValue.swift in Sources */,
 				5A804FAA28B259F400E44681 /* PlaybackControlButton.swift in Sources */,
 				5A02711428A939580063F007 /* HomeViewModel.swift in Sources */,
 				5A09018128A4663B00C971B7 /* PhotoPicker.swift in Sources */,
+				5A395D0928C91D6B00DA2B25 /* TwigCarouselView.swift in Sources */,
 				5AB2C92228BBED780066E5EA /* SavedCourseView.swift in Sources */,
 				5AD62C2E28A85DD70076FF1A /* HomeView.swift in Sources */,
+				5A05A6C728C689ED0045DDF3 /* SaveCourseViewModel.swift in Sources */,
 				5A1E875F2884A2DD009CB2FC /* User.swift in Sources */,
 				5AB2C91F28BBE7190066E5EA /* FavouriteViewModel.swift in Sources */,
 				5AA2786E28B1482300BDAACD /* PlayerView.swift in Sources */,
@@ -539,6 +574,7 @@
 				5A1E876C2884A4DC009CB2FC /* LoginViewModel.swift in Sources */,
 				5A09018628A4737D00C971B7 /* UserManagerViewModel.swift in Sources */,
 				5A1E87632884A395009CB2FC /* UserAvatarViewComponent.swift in Sources */,
+				5A05A6C928C68EE40045DDF3 /* CustomDatePickerView.swift in Sources */,
 				5AB2C91328BB8E690066E5EA /* CustomNavigationBar.swift in Sources */,
 				5A1E87852884E051009CB2FC /* RootOnboardingView.swift in Sources */,
 				5A1E877C2884CD58009CB2FC /* OnboardingView.swift in Sources */,

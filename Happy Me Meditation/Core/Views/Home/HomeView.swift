@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var showParticles: Bool = false
     @EnvironmentObject var userManager: UserManagerViewModel
     @EnvironmentObject var mainVM: MainViewModel
     @EnvironmentObject var audioManager: AudioManager
@@ -26,7 +27,7 @@ struct HomeView: View {
                     newlyAddedSection
                 }
                 .padding(.horizontal)
-                .padding(.bottom, 120)
+                .padding(.bottom, audioManager.isSetAudio ? 130 : 90)
                 
                 NavigationLink(isActive: $showCourseDetails) {
                     CourseDetailsView(course: homeVM.selectedCourse)
@@ -78,13 +79,26 @@ extension HomeView{
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10){
                     ForEach(MoodType.allCases, id: \.self) { mood in
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 20)
-                                .fill(Color.secondaryGreen)
-                            Text(mood.rawValue)
-                                .font(.largeTitle)
+                        Button {
+                            
+                            withAnimation {
+                                homeVM.currentMood = mood
+                            }
+                            showParticles.toggle()
+                        } label: {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 20)
+                                    .fill(homeVM.currentMood == mood ? .mintGreen : Color.secondaryGreen)
+                                Text(mood.rawValue)
+                                    .font(.largeTitle)
+                            }
+                            .frame(width: 80, height: 80)
+                            .overlay{
+                                if showParticles && homeVM.currentMood == mood{
+                                    ConfettiView(show: $showParticles)
+                                }
+                            }
                         }
-                        .frame(width: 80, height: 80)
                     }
                 }
                 .padding(.leading)

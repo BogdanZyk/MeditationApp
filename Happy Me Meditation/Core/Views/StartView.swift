@@ -21,7 +21,7 @@ struct StartView: View {
                         .environmentObject(loginVM)
                 }
             }else{
-                Text("launchView")
+                LaunchView()
                     .onAppear{
                         withAnimation(.easeInOut.delay(1)) {
                             isActive.toggle()

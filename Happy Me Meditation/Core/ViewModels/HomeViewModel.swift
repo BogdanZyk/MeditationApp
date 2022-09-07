@@ -12,7 +12,7 @@ final class HomeViewModel: ObservableObject{
     
     
 
-    
+    @Published var currentMood: MoodType? = nil
     @Published var shortSessions: [Session]? = []
     @Published var newCourses: [Course]? = []
     @Published var recomendedCourses: [Course]? = []
@@ -27,42 +27,9 @@ final class HomeViewModel: ObservableObject{
         fetchDailyCourse()
         fetchRecomendedCourse()
         fetchNewCourses()
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-//            self.uploadData()
-//        }
-        
     }
     
 
-//    func uploadData(){
-////        addData(course: MockData.dailyCourse)
-//        MockData.newCourse.forEach { course in
-//            addData(course: course)
-//        }
-//    }
-//
-//
-//    func addData(course: Course){
-//        do {
-//            try FirebaseManager.shared.firestore
-//                .collection(FBConstants.NEW_COURSES)
-//                .document()
-//                .setData(from: course, completion: { error in
-//                    if let error = error{
-//                        print(error.localizedDescription)
-//                    }
-//                    print("data set")
-//                })
-//            print("data set finish")
-//
-//        } catch let error{
-//            print(error.localizedDescription)
-//        }
-//
-//    }
-    
-    
-    
     func fetchRecomendedCourse(){
         FirebaseManager.shared.firestore
             .collection(FBConstants.RECOMENDED_COURSES)
