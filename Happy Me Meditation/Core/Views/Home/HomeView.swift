@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var showParticles: Bool = false
     @EnvironmentObject var userManager: UserManagerViewModel
     @EnvironmentObject var mainVM: MainViewModel
     @EnvironmentObject var audioManager: AudioManager
@@ -79,21 +80,25 @@ extension HomeView{
                 HStack(spacing: 10){
                     ForEach(MoodType.allCases, id: \.self) { mood in
                         Button {
+                            
                             withAnimation {
                                 homeVM.currentMood = mood
                             }
+                            showParticles.toggle()
                         } label: {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 20)
                                     .fill(homeVM.currentMood == mood ? .mintGreen : Color.secondaryGreen)
-                                    
                                 Text(mood.rawValue)
                                     .font(.largeTitle)
                             }
                             .frame(width: 80, height: 80)
+                            .overlay{
+                                if showParticles && homeVM.currentMood == mood{
+                                    ConfettiView(show: $showParticles)
+                                }
+                            }
                         }
-
-                        
                     }
                 }
                 .padding(.leading)

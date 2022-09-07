@@ -50,6 +50,7 @@
 		5A1E87882884E260009CB2FC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E87872884E260009CB2FC /* MainView.swift */; };
 		5A1E878B2884E4E9009CB2FC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E878A2884E4E9009CB2FC /* CustomTextField.swift */; };
 		5A1E878D288599F9009CB2FC /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E878C288599F8009CB2FC /* UIApplication.swift */; };
+		5A395D0728C9156C00DA2B25 /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A395D0628C9156C00DA2B25 /* ConfettiView.swift */; };
 		5A804FAA28B259F400E44681 /* PlaybackControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A804FA928B259F400E44681 /* PlaybackControlButton.swift */; };
 		5A804FAC28B2763F00E44681 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A804FAB28B2763F00E44681 /* Date.swift */; };
 		5A88D0F128B6D5A200356064 /* FBConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88D0F028B6D5A200356064 /* FBConstants.swift */; };
@@ -108,6 +109,7 @@
 		5A1E87872884E260009CB2FC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		5A1E878A2884E4E9009CB2FC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		5A1E878C288599F8009CB2FC /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		5A395D0628C9156C00DA2B25 /* ConfettiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
 		5A804FA928B259F400E44681 /* PlaybackControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackControlButton.swift; sourceTree = "<group>"; };
 		5A804FAB28B2763F00E44681 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		5A88D0F028B6D5A200356064 /* FBConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBConstants.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 		5A1E875B2884A163009CB2FC /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				5A395D0628C9156C00DA2B25 /* ConfettiView.swift */,
 				5AB2C91128BB8E4C0066E5EA /* NavBar */,
 				5A1E87892884E4D6009CB2FC /* TextFields */,
 				5A1E877F2884CF66009CB2FC /* Buttons */,
@@ -541,6 +544,7 @@
 				5A1E87612884A36C009CB2FC /* ProgressLoader.swift in Sources */,
 				5A1E87712884C831009CB2FC /* UserDataService.swift in Sources */,
 				5A1E877E2884CDE6009CB2FC /* Color.swift in Sources */,
+				5A395D0728C9156C00DA2B25 /* ConfettiView.swift in Sources */,
 				5A05A6CB28C6955C0045DDF3 /* DateValue.swift in Sources */,
 				5A804FAA28B259F400E44681 /* PlaybackControlButton.swift in Sources */,
 				5A02711428A939580063F007 /* HomeViewModel.swift in Sources */,
