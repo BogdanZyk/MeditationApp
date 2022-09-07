@@ -1,5 +1,5 @@
 //
-//  CustomCalendarView.swift
+//  CustomDatePickerView.swift
 //  Happy Me Meditation
 //
 //  Created by Bogdan Zykov on 05.09.2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomCalendarView: View {
+struct CustomDatePickerView: View {
     let dayofTheWeek: [String] = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     @State private var currentDate: Date = Date()
     @State private var currentMonth: Int = 0
@@ -22,7 +22,7 @@ struct CustomCalendarView: View {
         }
         .foregroundColor(.white)
         .padding(16)
-        .background(Color.secondaryGreen, in: RoundedRectangle(cornerRadius: 20))
+        .background(Color.darkEmerald, in: RoundedRectangle(cornerRadius: 20))
     }
 }
 
@@ -30,14 +30,14 @@ struct CustomCalendarView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.backgroung
-            CustomCalendarView()
+            CustomDatePickerView()
                 .padding()
         }
     }
 }
 
 
-extension CustomCalendarView{
+extension CustomDatePickerView{
     private var mounthSection: some View{
         HStack{
             Text("\(extractDate())")
@@ -101,7 +101,7 @@ extension CustomCalendarView{
 }
 
 
-extension CustomCalendarView{
+extension CustomDatePickerView{
     private var daysSection: some View{
         HStack{
             ForEach(dayofTheWeek, id: \.self) { day in

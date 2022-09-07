@@ -15,7 +15,7 @@
 		5A02711928A93EA60063F007 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5A02711828A93EA60063F007 /* NukeUI */; };
 		5A05A6C528C6869D0045DDF3 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05A6C428C6869D0045DDF3 /* CalendarView.swift */; };
 		5A05A6C728C689ED0045DDF3 /* SaveCourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05A6C628C689ED0045DDF3 /* SaveCourseViewModel.swift */; };
-		5A05A6C928C68EE40045DDF3 /* CustomCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05A6C828C68EE40045DDF3 /* CustomCalendarView.swift */; };
+		5A05A6C928C68EE40045DDF3 /* CustomDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05A6C828C68EE40045DDF3 /* CustomDatePickerView.swift */; };
 		5A05A6CB28C6955C0045DDF3 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05A6CA28C6955C0045DDF3 /* DateValue.swift */; };
 		5A09018128A4663B00C971B7 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09018028A4663B00C971B7 /* PhotoPicker.swift */; };
 		5A09018428A46CD900C971B7 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09018328A46CD900C971B7 /* Helpers.swift */; };
@@ -51,6 +51,7 @@
 		5A1E878B2884E4E9009CB2FC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E878A2884E4E9009CB2FC /* CustomTextField.swift */; };
 		5A1E878D288599F9009CB2FC /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E878C288599F8009CB2FC /* UIApplication.swift */; };
 		5A395D0728C9156C00DA2B25 /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A395D0628C9156C00DA2B25 /* ConfettiView.swift */; };
+		5A395D0928C91D6B00DA2B25 /* TwigCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A395D0828C91D6B00DA2B25 /* TwigCarouselView.swift */; };
 		5A804FAA28B259F400E44681 /* PlaybackControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A804FA928B259F400E44681 /* PlaybackControlButton.swift */; };
 		5A804FAC28B2763F00E44681 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A804FAB28B2763F00E44681 /* Date.swift */; };
 		5A88D0F128B6D5A200356064 /* FBConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88D0F028B6D5A200356064 /* FBConstants.swift */; };
@@ -77,7 +78,7 @@
 		5A02711528A93A0A0063F007 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		5A05A6C428C6869D0045DDF3 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		5A05A6C628C689ED0045DDF3 /* SaveCourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveCourseViewModel.swift; sourceTree = "<group>"; };
-		5A05A6C828C68EE40045DDF3 /* CustomCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendarView.swift; sourceTree = "<group>"; };
+		5A05A6C828C68EE40045DDF3 /* CustomDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePickerView.swift; sourceTree = "<group>"; };
 		5A05A6CA28C6955C0045DDF3 /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
 		5A09018028A4663B00C971B7 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		5A09018328A46CD900C971B7 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
@@ -110,6 +111,7 @@
 		5A1E878A2884E4E9009CB2FC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		5A1E878C288599F8009CB2FC /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		5A395D0628C9156C00DA2B25 /* ConfettiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
+		5A395D0828C91D6B00DA2B25 /* TwigCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwigCarouselView.swift; sourceTree = "<group>"; };
 		5A804FA928B259F400E44681 /* PlaybackControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackControlButton.swift; sourceTree = "<group>"; };
 		5A804FAB28B2763F00E44681 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		5A88D0F028B6D5A200356064 /* FBConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBConstants.swift; sourceTree = "<group>"; };
@@ -326,7 +328,8 @@
 				5A09018028A4663B00C971B7 /* PhotoPicker.swift */,
 				5A804FA928B259F400E44681 /* PlaybackControlButton.swift */,
 				5AB2C91728BB8F900066E5EA /* MainBgView.swift */,
-				5A05A6C828C68EE40045DDF3 /* CustomCalendarView.swift */,
+				5A05A6C828C68EE40045DDF3 /* CustomDatePickerView.swift */,
+				5A395D0828C91D6B00DA2B25 /* TwigCarouselView.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				5A804FAA28B259F400E44681 /* PlaybackControlButton.swift in Sources */,
 				5A02711428A939580063F007 /* HomeViewModel.swift in Sources */,
 				5A09018128A4663B00C971B7 /* PhotoPicker.swift in Sources */,
+				5A395D0928C91D6B00DA2B25 /* TwigCarouselView.swift in Sources */,
 				5AB2C92228BBED780066E5EA /* SavedCourseView.swift in Sources */,
 				5AD62C2E28A85DD70076FF1A /* HomeView.swift in Sources */,
 				5A05A6C728C689ED0045DDF3 /* SaveCourseViewModel.swift in Sources */,
@@ -566,7 +570,7 @@
 				5A1E876C2884A4DC009CB2FC /* LoginViewModel.swift in Sources */,
 				5A09018628A4737D00C971B7 /* UserManagerViewModel.swift in Sources */,
 				5A1E87632884A395009CB2FC /* UserAvatarViewComponent.swift in Sources */,
-				5A05A6C928C68EE40045DDF3 /* CustomCalendarView.swift in Sources */,
+				5A05A6C928C68EE40045DDF3 /* CustomDatePickerView.swift in Sources */,
 				5AB2C91328BB8E690066E5EA /* CustomNavigationBar.swift in Sources */,
 				5A1E87852884E051009CB2FC /* RootOnboardingView.swift in Sources */,
 				5A1E877C2884CD58009CB2FC /* OnboardingView.swift in Sources */,
