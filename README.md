@@ -2,7 +2,9 @@
 
 ### Meditation app for listening to audio and taking courses with audio. Save courses and audio, a mood board for every day.
 
-## Includes ( ALL SWIFTUI )
+## Includes
+- Swift
+- SwiftUI
 - clean MVVM architecture
 - AVKit
 - Combine Framework
